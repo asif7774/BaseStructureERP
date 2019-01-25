@@ -1,0 +1,141 @@
+@import '../../../assets/css/_base';
+
+// 1. Css Start Related to left panel menu listing
+// 2. CSS Start  Related To Logo
+
+
+// 1. Css Start Related to left panel menu listing //
+    .opti_left-nav-ul{
+        border-radius: 5px;
+        
+        li{
+            list-style: none;
+            padding: 10px 15px;
+            background-color: $list-bg-color;
+            border-bottom: 1px solid $list-seprator-color;
+            cursor: pointer;
+            a{
+                color: $light-black;
+                &:hover{
+                    text-decoration: none;
+                    color: $dark-black;
+                }
+                
+                // img{
+                //     margin-top: -4px;
+                // }
+
+                svg-icon {
+                    // position: relative;
+                    // top: 5px;
+                }
+            }
+            &:first-child{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+            &:last-child{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            } 
+        }
+    }
+
+    .opti_left-navigation ul li span {
+        margin-left:10px;
+    }
+    
+    #opti_LeftPanelID.opti_sidebar-minimize{
+        .opti_left-navigation{
+            ul {
+                li{
+                    img{
+                        width: 100%;
+                    }
+                    span{
+                       display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // If left Sidebar is Minimize
+        .opti_sidebar-minimize{
+            ul {
+                li{
+                    @include truncate(80px);
+                    text-align: center;
+                }
+            }
+        }
+// End Css Related to left panel menu listing //        
+
+
+// 2. CSS Start  Related To Logo //
+    .opti_logo.opti_vertical-align{
+        max-height: $top-bar-height;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+
+    // if left panel close
+        .opti_sidebar-minimize{
+            .opti_logo{
+                .opti_large-logo{
+                    display: none;
+                }
+                .opti_small-logo{
+                    display: block;
+                }
+            }
+        }
+
+    // if left panel open
+        .opti_logo{
+            .opti_large-logo{
+                display: block;
+            }
+            .opti_small-logo{
+                display: none;
+            }
+        }
+
+    // Css Related To Desktop and Ipad Logo
+        .opti_device-logo-outer{
+            max-height: $top-bar-height;
+            overflow: hidden;
+            height:$top-bar-height;
+        }
+
+        .opti_device-logo{
+            // display: block;   
+            max-height: 100%;
+            img{
+                // height: 100%;
+                // width: 100%;
+                // padding-top: 10px;
+                // padding-bottom: 10px;
+                height: auto;
+                width: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                max-width: 100%;
+                max-height: 100%;
+                margin: 0 auto;
+            }
+        }
+// CSS End  Related To Logo //       
+
+// powered by logo
+#opti_LeftPanelFooterLogo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    img{
+        width: 60%;
+    }
+}

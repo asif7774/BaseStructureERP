@@ -1,0 +1,120 @@
+@import '../../_typography-button-layout';
+
+h5, h6{
+  // color: $white;
+}
+
+a{
+  color: $dark-black;
+  text-decoration: underline;
+}
+
+a:hover{
+  color: $light-black;
+}
+
+.opti_vertcal-align-outer-box{
+  height: 100vh;
+  @extend .opti_vertical-align;
+}
+
+.panel-body{
+  width: 100%;
+  overflow-y: scroll;
+  height: auto;
+  max-height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 13px 0px #1fa2ff;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+.opti_account-submodule-container{
+  width: 370px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.opti_vertcal-align-outer-box{
+  height: calc(100vh - 100px);
+}
+
+.k-checkbox-label::before {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+label .opti_checkbox-container label, label > label {
+  color: $white;
+  font-size: $font-size-small;
+  a{
+    font-size: $font-size-small;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
+
+.opti_vertcal-align-outer-box{
+  padding: 10px 0;
+  width: 100%;
+}
+
+// css for white label
+.opti_form-label{
+  font-size: $font-size-small;
+  color: $white;
+  margin-bottom: 0 !important;
+}
+
+.opti_account-form-section{
+  width: 40%;
+  background: linear-gradient(177deg, #483DF6 2%, #435EF8 10%, #1BA0F1 44%, #25DDF5 91%, #45D790 130%);
+  height: calc(100vh - 100px);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 0px 20px #bababa;
+}
+
+.opti_account-banner-section{
+  width: 60%;
+  height: calc(100vh - 100px);
+  background: url('/assets/images/signup/nouse/shutter/body-bg-new-1.jpg');
+  background-size: cover;
+  box-shadow: 0px 0px 20px #bababa;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.opti_form-label, .k-checkbox-label{
+  color: $light-black !important;
+}
+
+// .opti_account-logo{
+//   margin-bottom: 40px;
+// }
+
+// .ps__thumb-y,
+// .ps__rail-y:hover > .ps__thumb-y, 
+// .ps__rail-y:focus > .ps__thumb-y
+// {
+//     background-color: #1fa2ff !important;
+// }
+
+// .ps__thumb-y, body.opti_account-module .ps__rail-y:hover > .ps__thumb-y, body.opti_account-module .ps__rail-y:focus > .ps__thumb-y {
+//   background-color: #1fa2ff !important;
+// }
+
+ #opti_landingpageID{
+  .panel-body{
+    padding: 20px;
+  }
+}
+
+.panel-body  button.w-100{
+  margin-left: 0;
+  text-align: center;
+}
+
+button{
+  background: linear-gradient(177deg, #483DF6 2%, #435EF8 10%, #1BA0F1 44%, #25DDF5 91%, #45D790 130%);
+}

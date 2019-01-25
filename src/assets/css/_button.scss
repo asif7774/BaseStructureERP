@@ -1,0 +1,29 @@
+@import '_base';
+
+body {
+
+    button{
+        border-radius: 5px ;
+        box-shadow: none;
+        border: 1px solid;
+        cursor: pointer ;
+        padding: 5px 10px ;
+        font-size: $font-size-small ;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button:first-child{
+        margin: 0 5px 0 0;
+    }
+    button:last-child{
+        margin: 0 0 0 5px;    
+    }
+    button:hover{
+        opacity: 0.8;
+    }
+
+
+}

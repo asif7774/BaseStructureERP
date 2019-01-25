@@ -1,0 +1,66 @@
+// @import 'account_module/_deviceaccount';
+@import 'account_module/_mobile_account_common';
+@import 'global_layout/_devicelayout';
+@import 'sales-order_module/_mobile_sales_order_common';
+
+
+
+
+
+/////////////////////////////////////////
+// css for main module grid loader start
+/////////////////////////////////////////
+body.opti_body-main-module .opti_loader-module-grid-list {
+    height: calc(100vh - 85px) ;
+}
+//////////////////////////////////////
+// css for main module grid loader end
+//////////////////////////////////////
+
+
+//////////////////////////////////////
+// css start for mobile grid
+//////////////////////////////////////
+.opti_mobile_grid_dl{
+    width: 50%;
+    float: left;
+    margin-bottom: 0;
+    padding: 5px;
+}
+.opti_mobile-grid-td{
+    box-shadow: 0px 2px 10px $input-border-color;
+}
+
+// make sarch box in full width
+body.opti_body-main-module{
+    .opti_grid-mainlist-mobile-search{
+        width: 100%;
+        form{
+            width: 100%;
+            padding-right: 0;
+            label{
+                width: 100%;
+                input{
+                    width: calc(100% - 17px) !important;
+                }
+            }
+        }
+    }
+}
+
+body.opti_body-main-module{
+    .opti_grid-mainlist-mobile-search-add
+    {
+        width: 100%;
+        form{
+            width: calc(100% - 26px);
+            padding-right: 0;
+            label{
+                width: 100%;
+                input{
+                    width: calc(100% - 17px) !important;
+                }
+            }
+        }
+    }
+}

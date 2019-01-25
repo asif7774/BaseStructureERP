@@ -1,0 +1,95 @@
+<div class="opti_sales-order-detail-content position-relative h-100" id="opti_SalesOrderDetailContentID">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+  
+  
+            <!-- loader start -->
+            <div class="opti_loader opti_loader-content-tab" *ngIf="showLoader">
+                <div class="opti_spinner"></div>
+            </div>
+            <!-- loader end -->  
+  
+            <!-- grid start -->
+            <ng-container *ngIf="showLoader==false">
+              <kendo-grid 
+                [kendoGridBinding]="gridData" 
+                [resizable]="false" 
+                [pageSize]="50" 
+                [pageable]="true" 
+                [sortable]="true"  
+                [filterable]=isColumnFilter
+                [groupable]=isColumnGroup 
+                [columnMenu]="{ columnChooser: false }" 
+                [height]=gridHeight-67 
+                [selectable]="true" 
+                #gridItem>
+                <!-- [kendoGridBinding]="gridData | customPipeItem:searchRequest"  -->
+                <!-- (selectionChange)="openInqueryDetailOnSelectInquery(gridItem, $event, true, gridItem)" -->
+  
+                <!-- grid template start -->
+                <ng-template kendoGridToolbarTemplate>
+  
+                    <!-- show hide column start show hide -->
+                    <kendo-grid-column-chooser class="float-left"></kendo-grid-column-chooser>
+  
+                    <!-- filter and grouping -->
+                    <form class="k-form opti_show-hide-grid-column-filter float-left">
+                        <div class="k-form-field float-left">
+                            <input #chkFilter type="checkbox" (change)="onFilterChange(chkFilter,gridItem)" id="opti_SalesOrderContentColumnFilterID" [(ngModel)]="isColumnFilter" class="k-checkbox" name="columnfilter" />
+                            <label class="k-checkbox-label" for="opti_SalesOrderContentColumnFilterID">Enable Filter</label>
+                        </div>
+  
+                        <!-- <div class="k-form-field float-left">
+                            <input type="checkbox" id="opti_SalesOrderContentColumnGroupID"  [(ngModel)]="isColumnGroup" class="k-checkbox" name="columnGroup" />
+                            <label class="k-checkbox-label" for="opti_SalesOrderContentColumnGroupID">Enable Grouping</label>
+                        </div> -->
+                    </form>
+  
+                    <!-- export -->
+                    <button type="button" kendoGridExcelCommand icon="file-excel" class="float-left opti_grid-toolbar-excelbutton">
+                        <svg-icon src="{{imgPath}}/common/download.svg" [svgStyle]="{ 'width.px':16, 'height.px':16}"></svg-icon>
+                    </button>
+  
+                    <!-- common search -->
+                    <!-- <div class="float-right opti_right-top-sec-grid-purchase opti_right-top-sec-grid">
+                        <form class="k-form opti_common-search-form float-left p-0">
+                            <label class="k-form-field opti_common-search-label">
+                                <input type="text" class="k-textbox" name="searchRequest" [(ngModel)]="searchRequest" />
+                                <span class="opti_vertical-align opti_mouse-pointer"><img src="{{imgPath}}/common/search-black.svg" class="" alt="Search" width="15" /></span>
+                            </label>
+                        </form>
+                    </div> -->
+  
+                </ng-template>
+  
+                <kendo-grid-column field="ItemNumber" title="Item Number" [width]="160"></kendo-grid-column>
+                <kendo-grid-column field="Quantity" title="Quantity" [width]="160"></kendo-grid-column>
+                <kendo-grid-column field="UnitPrice" [width]="160" title="Unit Price"></kendo-grid-column>
+                <kendo-grid-column field="DiscountPecent" [width]="160" title="Disc%" ></kendo-grid-column>
+                <kendo-grid-column field="TaxCode" title="Tax Code" [width]="160"></kendo-grid-column>
+                <kendo-grid-column field="TotalLC" title="Total (LC)" [width]="160"></kendo-grid-column>
+                <kendo-grid-column field="UOMCode" title="UoM Code" [width]="160"></kendo-grid-column>
+                <kendo-grid-column field="ShipTo" title="Ship To" [width]="160"></kendo-grid-column>
+                <kendo-grid-column field="BillTo" [width]="160" title="Bill To"></kendo-grid-column>
+                <kendo-grid-column field="ShippingType" [width]= "160" title="Shipping Type"></kendo-grid-column>
+                <kendo-grid-column field="DeliveryDate" title="Delivery Date" [width]="160" filter="date"  type=date format="{0:dd MMM yy}"></kendo-grid-column>
+                
+                <!-- xlsx template start -->
+                <kendo-grid-excel fileName="sales-order-content.xlsx"></kendo-grid-excel>
+                <!-- xlsx template end -->
+  
+              </kendo-grid>
+            </ng-container>
+            <!-- grid end -->
+  
+  
+        </div>
+      </div>
+    </div>  
+  </div>  
+  
+  
+  
+  
+  

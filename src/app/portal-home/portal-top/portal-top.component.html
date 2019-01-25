@@ -1,0 +1,200 @@
+<section id="opti_TopBarID">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- this logo only for mobile -->
+            <div class="opti_icon-spacing float-left opti_mobile-logo opti_vertical-align"><img src="assets/images/logo/mobile-logo.png" alt="Logo" class="opti_small-logo opti_mouse-pointer" /></div>
+            <!-- ebd this logo only for mobile -->
+
+            <div id="sidebarCollapse" class="opti_vertical-align float-left">
+              <!-- hamburger and close icon -->
+              <img src="assets/images/common/back.svg" class="opti_desktop-menu-icon opti_mouse-pointer opti_backarrow" alt="hamburger" width="20" height="20" />
+              <img src="assets/images/common/hammenu.svg" class="opti_desktop-menu-icon opti_mouse-pointer opti_hamburger" alt="close hamburger" width="20" height="20" />
+
+              <img src="assets/images/common/back.svg" class="opti_mobile-menu-icon opti_mouse-pointer opti_backarrow" alt="hamburger" width="20" height="20" />
+              <img src="assets/images/common/hammenu.svg" class="opti_mobile-menu-icon opti_mouse-pointer opti_hamburger" alt="close hamburger" width="20" height="20" />
+              
+            </div>
+            
+            <!-- Top Right Section -->
+            <div class="opti_topbar-rightpanel float-right">
+                <div class="opti_vertical-align">
+                    <ul class="d-inline-flex">
+                        <li class="opti_icon-spacing">
+
+                            <!-- search for desktop and ipad -->
+                            <div class="opti_search-form opti_hide-in-mobile">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                                <span class="opti_top-search-icon opti_vertical-align opti_mouse-pointer"><img src="assets/images/common/search-black.svg" class="" alt="Search" width="15" /></span>
+                            </div>
+                            <!-- end search for desktop and ipad -->
+
+                            <!-- search for mobile -->
+                            <div class="opti_search-form opti_hide-in-desktop-ipad " >
+                                <!-- <input class="form-control" type="text" placeholder="Search" aria-label="Search"> -->
+                                <span class="opti_top-search-icon opti_vertical-align opti_mouse-pointer" (click)="openVerticallyCentered(mobileSearch)"><img src="assets/images/common/search-white.svg" class="" alt="Search" width="20" height="30" /></span>
+                            </div>
+                            <!-- end search for mobile -->
+
+                        </li>
+
+                        <!-- <li class="opti_icon-spacing">
+                            <img src="assets/images/common/settings.svg" (click)="openCloseRightPanel();" class="opti_mouse-pointer opti_theme-setting" alt="Theme Setting" width="20" height="30" />
+                        </li> -->
+                        
+                        <!-- if notifications not  avialble -->
+                        <!-- <li class="opti_icon-spacing">
+                            <img src="assets/images/common/notifications-button.svg" class="opti_mouse-pointer opti_theme-setting" alt="Theme Setting" width="20" height="30" />
+                        </li> -->
+
+                        <!-- if notifications avialble -->
+                        <li class="opti_icon-spacing position-relative" dropdown>
+                            <span dropdownToggle class="dropdown-toggle opti_mouse-pointer">
+                                <img src="assets/images/common/notifications-button.svg" class="float-left opti_mouse-pointer opti_theme-setting" alt="Theme Setting" width="20" height="30" />
+                                <span class="opt_topbar-count">99+</span>
+                            </span>    
+                            <div class="dropdown-menu opti_notification-drop-down" *dropdownMenu [perfectScrollbar]="">
+                                <ul class="opti_liststyle-one-ul" >
+                                    <li class="opti_mouse-pointer opti_liststyle-one-li" *ngFor='let i of [1,2,3,4,5,6]'>
+                                        <div class="opti_liststyle-one-image">
+                                            <img src="assets/images/common/user-avatar.png" width="30" height="30" alt="img" />
+                                        </div>
+                                        <div class="opti_liststyle-one-text">
+                                            <h5>Peter</h5>
+                                            <p>purchase request has been created by samsung</p>
+                                            <p class="opti_date">May 30, 2018 8:02 AM</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="opti_icon-spacing opti_user-profile position-relative" dropdown>
+                            <a dropdownToggle class="dropdown-toggle"><img src="assets/images/common/user-avatar.png" class="opti_mouse-pointer opti_theme-setting" alt="User Profile" width="30" height="30" /></a>
+                            <ul class="dropdown-menu opti_user-profile-drop-down" *dropdownMenu>
+                                <li>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="opti_profile-box">
+                                                    <div class="opti_profile-box-img">
+                                                        <img src="assets/images/common/user-avatar.png" alt="user image" width="80">
+                                                    </div>
+                                                    <div class="opti_profile-box-text opti_vertical-align"> 
+                                                        <h5>{{loggedInUserName}}</h5>
+                                                        <p>{{parentName}}</p>
+                                                        <!-- <p>Short Description</p>
+                                                        <p class="opti_profile-para">
+                                                            <span class="btn btn-rounded btn-danger btn-sm">View Profile</span> 
+                                                            <button class="k-button">View Profile</button>
+                                                        </p> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>            
+                                </li>
+                                
+                                <li class="opti_seprator"></li>
+                                
+                                <li class="opti_mouse-pointer opti_profile-box-setting" (click)="openCloseRightPanel();">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <svg-icon src="assets/images/common/settings-black.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon>Setting
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="opti_seprator"></li>
+                                
+                                <li class="opti_mouse-pointer opti_profile-box-help">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <svg-icon src="assets/images/common/Help.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon>Help
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="opti_seprator"></li>
+
+                                <li class="opti_mouse-pointer opti_profile-box-aboutus" (click)="openVerticallyCentered(about)">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12" >
+                                                <svg-icon src="assets/images/common/about-us.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon>About Us
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="opti_seprator"></li>
+
+                                <li class="opti_mouse-pointer opti_profile-box-logout" (click)="signOut()">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12" >
+                                                <svg-icon src="assets/images/common/logout.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon>LogOut
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>    
+                <!-- <div class="opti_vertical-align opt_top-bar-height opti_icon-spacing float-left">
+                    <img src="assets/images/common/settings.svg" (click)="themeSetting();" class="opti_mouse-pointer opti_theme-setting" alt="Theme Setting" width="20" height="30" />
+                </div> -->
+            </div>    
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Theme setting -->
+<section id="opti_ThemeSettingID" [ngClass]="{'opt_show': openThemeSetting==true}">
+    <app-theme-manager (messageEvent)=receiverMessage($event)></app-theme-manager>
+</section>
+
+<!-- About us modal start -->
+<ng-template #about let-modal>
+    <!-- <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> -->
+    
+    <div class="modal-body text-center" style="padding: 20px;">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <img src="assets/images/common/close-black.svg" width="15" />
+        </button>
+        <p></p>
+        <p>
+            <img src="assets/images/logo/large-logo-old.png" alt="Large Logo" class="opti_large-logo" />
+        </p>
+        <p>Version {{applicationVersion}}</p>
+        <p>Copyright 2000-2018. All rights reserved.</p>
+    </div>
+
+    <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div> -->
+</ng-template>
+<!-- About us modal end -->
+
+<!-- Mobile search start -->
+<ng-template #mobileSearch let-modal>
+    <div class="modal-body opti_mobile-search-modal">
+        <div class="opti_search-form">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <span class="opti_top-search-icon opti_vertical-align opti_mouse-pointer" (click)="modal.dismiss('Cross click')"><img src="assets/images/common/search-black.svg" class="" alt="Search" width="15" /></span>
+        </div>
+    </div>
+</ng-template>
+<!-- mobile search end -->

@@ -1,0 +1,503 @@
+body{
+    //////////////////////////////////////////////////////////////////
+    // Some basic css
+    //////////////////////////////////////////////////////////////////
+    
+    
+    button.opti_remove-button-css{
+        border: none;
+        background: none;
+    }
+    
+    .opti_error-msg{
+        color: $error !important;
+        font-size: $font-size-small;
+    }
+    
+    .opt_content-padding{
+        padding-top: 15px;
+        padding-bottom:15px;
+    }
+
+    .opt_top-bar-height{
+        height: $top-bar-height;
+    }
+
+    // .opti_position-relative{
+    //     position: relative;
+    // }
+
+    // .opti_display-inline{
+    //     display: inline;
+    // }
+
+    // .opti_display-inline-block{
+    //     display: inline-block;
+    // }
+
+    // .opti_display-inline-flex{
+    //     display: inline-flex;
+    // }
+
+    .opti_mouse-pointer{
+        cursor: pointer;
+    }
+
+    .opti_form-label{
+        font-size: $font-size-small;
+        margin-bottom: 0 !important;
+    }
+    button[disabled], .k-button[disabled], [disabled] .k-button{
+        opacity: 0.2;
+        outline: none;
+        cursor: default;
+        filter: grayscale(0.1);
+        pointer-events: none;
+        box-shadow: none;
+    }
+    /////////////////////////////////////////////////////////////////////////////////
+    // Some basic css end
+    /////////////////////////////////////////////////////////////////////////////////
+
+  
+    /////////////////////////////////////////////////////////////////////////////////
+    // Loader css start
+    /////////////////////////////////////////////////////////////////////////////////
+    .opti_loader {
+      position: absolute;
+      background: rgba(255,255,255,1);
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      z-index: 99;
+  
+        @extend .opti_vertical-align;
+        .opti_spinner {
+            border: 3px solid #c7c7c7;
+            border-radius: 50%;
+            border-top: 3px solid;
+            border-top-color: #3498db;
+            width: 25px;
+            height: 25px;
+            -webkit-animation: spinloader 0.5s linear infinite; /* Safari */
+            animation: spinloader 0.5s linear infinite;
+            margin: 0 auto;
+        }
+        
+        /* Safari */
+        @-webkit-keyframes spinloader {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spinloader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    }
+
+    .opti_loader-module-grid-list{
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
+    }
+    ////////////////////////////////////////////////////////////////////
+    // Loader css end
+    ////////////////////////////////////////////////////////////////////
+    
+    /////////////////////////////////////////////////////////////////////
+    // password indicator start
+    ////////////////////////////////////////////////////////////////////
+    .opti_password-indicator-stripped{
+      height: 4px;
+      overflow: hidden;
+      background-color: #c7c7c7;
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+      margin-top: 8px !important;
+      .opti_weak-pass{
+          @include password-mg-indicator(40%, #d9534f)
+      }
+      .opti_medium-pass{
+          @include password-mg-indicator(60%, #f0ad4e)
+      }
+      .opti_strong-pass{
+          @include password-mg-indicator(80%, #5cb85c)
+      }
+      .opti_strong-pass-full{
+          @include password-mg-indicator(100%, #5cb85c)
+      }
+    }
+    /////////////////////////////////////////////////////////////////////
+    // password indicator end
+    /////////////////////////////////////////////////////////////////////
+  
+    //////////////////////////////////////////////////////////////////////
+    // List style 1 using in left panel
+    //////////////////////////////////////////////////////////////////////
+    ul.opti_liststyle-one-ul{
+      .opti_liststyle-one-li{
+          display: flex;
+          padding: 10px 15px;
+          border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+          cursor: pointer;
+          .opti_liststyle-one-image {
+              width: 30px;
+              float: left;
+          }
+          .opti_liststyle-one-text {
+              float: left;
+              width: calc(100% - 30px);
+              padding-left: 10px;
+              h5, p{
+                  margin-bottom: 0;
+              }
+              p.opti_date {
+                  font-size: $font-size-small;
+              }
+          }
+          img{
+              border-radius: 50%;
+          }
+      }
+    }
+    ///////////////////////////////////////////////////////////////////////
+    // List style 1 using in left panel end
+    ///////////////////////////////////////////////////////////////////////
+    
+
+    ///////////////////////////////////////////////////////////////////////
+    //Default Styling For List start
+    ///////////////////////////////////////////////////////////////////////
+    ul{
+      padding: 0;
+      margin: 0;
+      li.opti_list{
+          padding: 10px 15px;
+          border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+          cursor: pointer;
+      }
+    }
+  
+    ul{
+      li{
+          list-style: none;
+      }
+    }
+    ////////////////////////////////////////////////////////////////////////
+    //Default Styling For List end
+    ////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////////////////////////////
+    // Icon spacing start
+    ////////////////////////////////////////////////////////////////////////
+    .opti_icon-spacing{
+      padding: 0 10px;
+    }
+    .opti_icon-spacing:first-child{
+      padding: 0 10px 0 0;
+    }
+    .opti_icon-spacing:last-child{
+      padding: 0 0 0 10px;
+    }
+    /////////////////////////////////////////////////////////////////////////
+    // Icon spacing end
+    /////////////////////////////////////////////////////////////////////////
+  
+    
+    //////////////////////////////////////////////////////////////////////////
+    // prevent to increase size of scrollbar start
+    //////////////////////////////////////////////////////////////////////////
+    .ps__rail-y{
+      width: 6px !important;
+      .ps__thumb-y{
+        width: 6px !important;
+      }
+    }
+
+    .ps__rail-x{
+        z-index: 2;
+        height: 6px !important;
+        .ps__thumb-x{
+            height: 6px !important;
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    // prevent to increase size of scrollbar end
+    ////////////////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////////////////////////
+    //our custom tab start
+    ////////////////////////////////////////////////////////////////////////////
+        // vertical tab start
+            .opti_vertical-tab-outer {
+                width: 60px;
+                ul {
+                    border-radius: 5px;
+                    li{
+                        list-style: none;
+                        padding: 10px 15px;
+                        background-color: #F8F8F8;
+                        border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+                        cursor: pointer;
+                    }
+                    li:first-child{
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+                    li:last-child{
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                    li.opti_disable-tab{
+                        opacity: 0.5;
+                        cursor: default;
+                        a{
+                            cursor: default;
+                        }
+                    }
+                    li.opti_disable-tab:hover{
+                        background: #F8F8F8;
+                    }
+                }
+            }
+            .opti_vertical-tabcontent {
+                width: calc(100% - 60px);
+                height: calc(100vh - 155px);
+            }
+        // vertical tab end
+        
+        // horizontal tab start
+            .opti_tab-outer{
+                width: calc(100% - 35px);
+                overflow-x: auto;
+
+                // new design tab start
+                    ul.tabs{
+                        margin: 0;
+                        list-style-type : none;
+                        line-height : 35px;
+                        max-height: 35px;
+                        overflow: hidden;
+                        border: none ;
+                        display: flex ;
+                        flex-wrap: nowrap;
+                    }
+                    ul.tabs > li.active{
+                        z-index: 2;
+                        //background: red;
+                        a{
+                            color: $white;
+                        }
+                    }
+                    ul.tabs > li:hover a{
+                        color: $white;
+                    }
+                    ul.tabs > li.active:before{
+                        border-color : transparent transparent transparent transparent;
+                    }
+                    ul.tabs > li.active:after{
+                        border-color : transparent transparent transparent transparent;
+                    }
+                    ul.tabs > li:last-child:after{
+                        border-color : transparent transparent transparent transparent;
+                    }
+                    ul.tabs > li:first-child{margin-left: -5px;}
+                    ul.tabs > li{
+                        margin : 5px -10px 0;
+                        border-top-right-radius: 25px 170px;
+                        border-top-left-radius: 20px 90px;
+                        padding : 0 35px 0 27px;
+                        height: 170px;
+                        background: #f2f3dd;
+                        position : relative;
+                        // box-shadow: 0 10px 20px rgba(0,0,0,.5);
+                        max-width : 200px;
+                        white-space: nowrap;
+                    }
+                    ul.tabs > li > a{
+                        display: inline-block;
+                        max-width:100%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-decoration: none;
+                        color: $light-black;
+                    }
+                    ul.tabs > li:before, ul.tabs > li:after{
+                        content : '';
+                        background : transparent;
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 100%;
+                        border-width: 10px;
+                        top: 0px;
+                        border-style : solid;
+                        position : absolute;
+                    }
+                    ul.tabs > li:before{
+                        border-color : transparent transparent transparent transparent;
+                        -webkit-transform : rotate(48deg);
+                        left: 0px;
+                    }
+                    ul.tabs > li:after{
+                        border-color : transparent transparent transparent transparent;
+                        -webkit-transform : rotate(-48deg);
+                        right: 0px;
+                    }
+                    /* Clear Fix took for HTML 5 Boilerlate*/
+                    .clearfix:before, .clearfix:after { content: ""; display: table; }
+                    .clearfix:after { clear: both; }
+                    .clearfix { zoom: 1; }
+                // end new design tab
+
+
+                .opti_tab {
+                    overflow: hidden;
+                    border: 1px solid #ccc;
+                    .opti_tablinks{
+                        cursor: pointer;
+                    }
+                }
+
+                // for disabled tab
+                ul.tabs {
+                    li.opti_tablinks.opti_disable-tab:hover {
+                        background-color: #f2f3dd;
+                        a{
+                            color: $light-black;
+                        }
+                    }
+                    li.opti_tablinks.opti_disable-tab{
+                        opacity: 0.5;
+                    }
+                } 
+                
+
+            }   
+        
+            /* Style the tab content */
+            .opti_tabcontent {
+                // display: none;
+                padding: 6px 12px;
+                // border: 1px solid #ccc;
+                border-top: none;
+                height: calc(100% - 50px);
+            }
+        // Horizontal tab end    
+    ////////////////////////////////////////////////////
+    //our custom tab end
+    ////////////////////////////////////////////////////    
+
+    ////////////////////////////////////////////////////
+    // grid toolabr start
+    ////////////////////////////////////////////////////
+    kendo-grid-toolbar.k-header.k-grid-toolbar {
+        .k-form.opti_show-hide-grid-column-filter{
+            padding: 7px 0 0 20px;
+            .k-form-field{
+                margin-bottom: 0 !important;
+                .k-checkbox-label{
+                    margin-right: 15px;
+                }
+            }
+        }
+        
+        .opti_grid-toolbar-excelbutton{
+            background: transparent !important;
+            margin-top: 2px !important;
+            .k-i-file-excel {
+                display: none;
+            }
+        }
+
+        .opti_grid-toolbar-excelbutton.k-button:focus{
+            box-shadow: none;
+        }
+    }
+    ///////////////////////////////////////////////////////
+    // grid toolabr end
+    ///////////////////////////////////////////////////////
+
+    // svg icon with k-button
+    svg-icon.k-button {
+        padding: 0;
+        margin: 0;
+        background: transparent !important;
+        border: none;
+    }
+
+    // note section start
+    .opti_note-msg{
+        font-weight: 500;
+        font-size: 13px;
+        padding-top: 5px;
+    }
+    tr:hover .opti_note-action-button-sec svg-icon svg {
+        fill: $dark-black !important;
+    }
+    kendo-grid tr:hover .opti_note-meta, 
+    kendo-grid tr:hover .opti_note-meta strong,
+    kendo-grid tr:hover .opti_note-meta span {
+        color: $dark-black;
+    }
+
+    // item tab 
+    .opti_items-upload .k-upload-files {
+        min-height: 130px;
+        overflow-y: auto;
+        height: 130px;
+    }
+    
+    ////////////////////////////////////////////////
+    // Common Search start
+    ////////////////////////////////////////////////
+    .opti_common-search-form {
+        .k-form-field.opti_common-search-label{
+            float: left;
+            margin: 0 !important;
+            margin-bottom: 0 !important;
+            border: 1px solid $input-border-color;
+            border-radius: 5px;
+            padding-right: 10px;
+            input{
+                width: 150px;
+                float: left;
+                border: none;
+            }
+            span{
+                float: left;
+                height: 32px;
+                margin: 0 !important;
+            }
+        }
+    }
+    //////////////////////////////////////////////////
+    // Common Search end
+    //////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////
+    // Disable form using overrite div on form start
+    //////////////////////////////////////////////////
+
+    .opti_overrite-section-for-disable {
+        width: calc(100% - 30px);
+        height: 100%; 
+        position: absolute;
+        z-index: 9;
+        opacity: 0;
+    }
+
+    //////////////////////////////////////////////////
+    // Disable form using overrite div on form end
+    //////////////////////////////////////////////////
+
+    .opti_arrow-grid-detail{
+        font-weight: $font-weight-bold;
+        background: $input-border-color;
+        color: $dark-black;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+        
+}

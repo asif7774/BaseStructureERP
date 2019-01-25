@@ -1,0 +1,80 @@
+<div id="opti_signinID" class="opti_account-submodule-wrapper">
+
+  <div class="float-left opti_account-banner-section">
+  </div>
+
+  <div class="float-right opti_account-form-section">
+    <div class="opti_outer-login-form opti_account-submodule-container">    
+        <div class="opti_vertcal-align-outer-box">
+        <div class="panel-body position-relative" [perfectScrollbar]="">
+
+            <!-- loader start -->
+            <div class="opti_loader" *ngIf="showLoader==true">
+                <div class="opti_spinner"></div>
+            </div>
+            <!-- loader end -->
+
+            <div class="w-100 text-center opti_signin-logo">
+                <img src="assets/images/logo/large-logo.png" alt="brandlogo" class="opti_account-logo">
+            </div>    
+            
+            <form class="k-form" #signInForm="ngForm">
+                
+                    <label class="k-form-field">
+                        <span class="opti_form-label">Email * 
+                        <span *ngIf="emailId.errors?.email && emailId.touched" class="float-right opti_error-msg"> Invalid emailId. </span>
+                        <span *ngIf="emailId.errors?.required && (emailId.dirty || emailId.touched)" class="float-right opti_error-msg" >Email is required.</span>
+                        <span  *ngIf="this.userNotExist==true && (emailId.dirty || emailId.touched) && (pwd.dirty || pwd.touched) && !emailId.errors?.required && !emailId.errors?.valid " class="float-right opti_error-msg">User does not exists.</span>
+                        </span>
+                        <input type="email"  email name = "email" required [(ngModel)]="userName"  #emailId = ngModel class="k-textbox" value="" placeholder="e.g. test@gmail.com" />
+                    </label>
+                    
+                    <label class="k-form-field">
+                        <span class="opti_form-label">Password *
+                            <span  *ngIf="pwd.errors && (pwd.dirty || pwd.touched)"   class="float-right opti_error-msg">Password is required.</span>
+                            <span  *ngIf="this.isError==true &&  (pwd.dirty || pwd.touched) && (emailId.dirty || emailId.touched) && !pwd.errors?.required" class="float-right opti_error-msg">Invalid credentials.</span>
+                            
+                        </span>
+                        <input name = "password" required [(ngModel)]="password" #pwd = ngModel type="password" class="k-textbox" value="" placeholder="Your password" />
+                        <span class="opti_mouse-pointer float-right opti_form-label" (click)="navigateToResetPassword()">Forgot your password?</span>
+                    </label>
+
+                    <label class="k-form-field d-inline-flex opti_signin-captcha">
+                        <!-- <div class="opti_captcha-box"> -->
+                        <span class="float-left opti_captcha-text">
+                            <input required class="k-textbox" #Captcha=ngModel [(ngModel)]="capchaText" type="text" name="captchatext" autocomplete="off" />
+                        </span>
+                        <span class="float-left opti_captcha-canvas">
+                            <canvas #myCanvas id="captchaCanvasID" width="70" height="30">Your browser does not support the HTML5 canvas tag.</canvas>
+                        </span>
+                        <span class="float-left opti_captcha-refresh opti_vertical-align">
+                            <div (click)="changeCaptcha()" class="opti_mouse-pointer">
+                                <img src="assets/images/common/refresh-button.svg" width="20" height="20" />
+                            </div>
+                        </span>
+                   </label>
+                    
+                    <div class="opti_error-msg opti_captcha-error d-inline-block w-100">
+                        <span class="opti_error-msg"  *ngIf="invalidCapcha==true"  >Please enter valid captcha.</span>
+                        <span class="opti_error-msg" *ngIf="Captcha.errors && (Captcha.dirty || Captcha.touched)">Captcha is required.</span>
+                    </div>
+
+                    <label class="k-form-field" >
+                        <div class="opti_checkbox-container">
+                        <input type="checkbox" id="auth-2fa" class="k-checkbox float-left" [(ngModel)]="isRemember" name="isRemember">
+                        <label class="k-checkbox-label" for="auth-2fa">Remember Me</label>
+                        </div>
+
+                    </label>
+                    <div class="text-right">
+                    <button type="submit" class="k-button k-primary w-100" (click)="login()" [disabled] = "!signInForm.form.valid">Login</button>
+                    </div> 
+            </form>
+            <!-- </div> -->
+        </div>  
+        </div>  
+    </div>
+  </div>
+  
+</div>          
+   

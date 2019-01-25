@@ -1,0 +1,138 @@
+<div class="opti_sales-quotations-detail-home position-relative h-100" id="opti_SalesOrderNotesID" [perfectScrollbar]="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+          <div class="opti_loader opti_loader-notes-tab-grid" *ngIf="showLoader"> 
+              <div class="opti_spinner"></div>
+          </div>
+
+          <ng-container *ngIf="showLoader==false">
+
+              <!-- start notes grid -->
+              <ng-container *ngIf="TabNotesGridStatus == true">
+                <div id="opti_NotesGridID">
+
+                    <!-- loader start -->
+                    <!-- <div class="opti_loader opti_loader-notes-tab-grid" *ngIf="showLoader">
+                        <div class="opti_spinner"></div>
+                    </div> -->
+                    <!-- loader end -->
+
+                  <kendo-grid 
+                    [kendoGridBinding]="noteItemsData" 
+                    [resizable]="false" 
+                    [pageSize]="50" 
+                    [pageable]="true" 
+                    [sortable]="true" 
+                    [filterable]="false"
+                    [groupable]="false" 
+                    [height]=gridHeight-67 
+                    (remove)="deleteNotes($event)">
+
+                        <!-- grid toolbar start -->
+                        <ng-template kendoGridToolbarTemplate>
+                            <div class="float-right">
+                                <form class="k-form opti_common-search-form float-left p-0 opti_icon-spacing">
+                                    <label class="k-form-field opti_common-search-label">
+                                        <input type="text" class="k-textbox" name="notesSearchValue" [(ngModel)]="notesSearchValue" />
+                                        <span class="opti_vertical-align opti_mouse-pointer">
+                                            <img src="{{imgPath}}/common/search-black.svg" class="" alt="Search" width="15" />
+                                        </span>
+                                    </label>
+                                </form>
+
+                                <svg-icon #showItemButtonSection src="{{imgPath}}/common/add.svg" (click)="openNewNote()" [svgStyle]="{ 'width.px':20, 'height.px':20}"
+                                class="opti_vertical-align float-left opti_icon-spacing" style="height: 30px;cursor: pointer;display: inline-flex;"></svg-icon>
+                            </div>
+                        </ng-template>
+                        <!-- grid toolbar end -->
+
+                        <!-- notes column start -->
+                        <kendo-grid-column class="opti_notes-column" media="(min-width: 320px)">
+                            <ng-template kendoGridCellTemplate let-dataItem>
+                              <dl>
+                                  <span class="opti_note-meta"><strong>{{ dataItem.CreatedByName }}</strong> 
+                                      has created <strong> {{dataItem.NoteText}} </strong>  note
+                                      on <strong>{{ dataItem.CreatedDate| date:'dd MMM yy' }} </strong> 
+                                  </span>
+                                  <span class="float-right opti_note-action-button-sec">
+                                      <svg-icon kendoGridEditCommand src="{{imgPath}}/common/edit.svg" (click)="openEditNoteView($event, dataItem)" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor}"
+                                          class="opti_mouse-pointer float-right"></svg-icon>
+                                  </span>
+                                  <dd class="opti_note-msg">{{ dataItem.Notes }}</dd>
+                              </dl>
+                            </ng-template>
+                        </kendo-grid-column>
+                        <!-- notes column end -->
+                  </kendo-grid>
+                      
+                </div>
+              </ng-container>
+              <!-- end notes grid -->
+
+              <!-- Add Notes Form  -->
+              <ng-container *ngIf="TabAddNotesFormStatus == true">
+                  <div class="card" #noteform>
+                      <div class="card-block">
+                          <form #requestnoteform = "ngForm" class="k-form">
+                              <label class="k-form-field">
+                                  <span class="opti_form-label">Add Note
+                                          <span *ngIf="note.errors?.required && (note.dirty || note.touched)" class="float-right opti_error-msg" >Note is required.</span>
+                                  </span>
+                                  <textarea class="k-textarea" name="addnotestring" #note = ngModel [(ngModel)]="noteModel.Notes" required>Please enter your note</textarea>
+                              </label>
+
+                              <label class="k-form-field">
+                                  <span class="opti_form-label">Note Type</span>
+                                  <kendo-dropdownlist name="formNoteType" [data]="noteTypes" [textField]="'text'" [valueField]="'value'" [(ngModel)]="selectedNoteItem">
+                                  </kendo-dropdownlist>
+                              </label>
+
+                              <div class="text-right">
+                                  <button type="button" class="k-button k-primary" (click)="submitNote($event);" [disabled] = "!requestnoteform.form.valid">Save</button>
+                                  <button type="button" class="k-button k-primary" (click)="closeAddNoteWindow($event);">Cancel</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </ng-container>
+              <!-- end Notes Form  -->
+
+              <!-- start edit form -->
+              <ng-container *ngIf="TabEditNotesFormStatus == true">
+                  <div class="card" >
+                      <div class="card-block">
+                          <form class="k-form" #editnoteform = "ngForm">
+                              <label class="k-form-field">
+                                  <span class="opti_form-label">Update Note
+                                          <span *ngIf="noteEdit.errors?.required && (noteEdit.dirty || noteEdit.touched)" class="float-right opti_error-msg" >Note is required.</span>
+                                  </span>
+                                  <!-- <textarea id="notes" name="note" class="k-textarea" #noteValue >{{selectedNote.Notes}}</textarea> -->
+                                  <textarea id="notes" name="note"  #noteEdit = ngModel class="k-textarea" [(ngModel)]="selectedNote.Notes" required></textarea>
+                              </label>
+
+                              <label class="k-form-field">
+                                  <span class="opti_form-label">Note Type</span>
+                                  <kendo-dropdownlist name="role" [data]="noteTypes" [textField]="'text'" [valueField]="'value'" [(ngModel)]="selectedNoteItem">
+                                  </kendo-dropdownlist>
+                              </label>
+
+                              <div class="text-right">
+                                  <button type="button" id="updateNote" class="k-button k-primary" (click)="updateNote($event)"  [disabled] = "!editnoteform.form.valid">Save</button>
+                                  <button type="button" id="addNote" class="k-button k-primary" (click)="closeUpdateNote($event)">Cancel</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </ng-container>
+              <!-- end edit form -->
+
+          </ng-container>
+      </div> 
+    </div> 
+  </div>  
+</div>
+
+
+

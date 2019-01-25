@@ -1,0 +1,108 @@
+@import 'src/assets/css/web/account_module/account';
+
+.opti_signupbox{
+    padding: 15px;
+    background-color: $white;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.opti_agrementtext{
+    font-size: $font-size-small;
+    display: block !important;
+    // color: $white;
+    a{
+        font-size: $font-size-small;
+    }
+}
+
+// .opti_fprm-inner{
+//     padding: 15px;
+// }
+
+// .k-form, .k-form-inline{
+//     padding: 10px !important;
+// }
+
+.opti_signup-companyname, 
+.opti_signup-url{
+    float: left;
+    width: 49%;
+}
+
+.opti_signup-url{
+    float: right;
+}
+
+.opti_signup-primary-name,
+.opti_signup-primary-email,
+.opti_signup-primary-phone{
+    float: left;
+    width: 32%;
+}
+
+.opti_signup-primary-email{
+    margin: 0 2%;
+}
+
+.opti_signup-primary-label,
+.opti_signup-company-label{
+    font-size: 10px;
+    color: $white;
+    margin-bottom: 0 !important;
+}
+
+// .opti_display-inline-block {
+//     display: inline-block !important;
+// }
+
+.opti_captcha-refresh button {
+    margin-top: 2px;
+}
+
+#captchaCanvasID{
+    border:1px solid $white;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-image:url('/../assets/images/common/captcha-background.jpg'); 
+    background-repeat: repeat;
+}
+
+.opti_captcha-refresh{
+    height: 32px;
+    display: flex !important;
+    margin-bottom: 0 !important;
+    margin-left: 5px !important;
+}
+
+
+#opti_signupPageID{
+    label.k-form-field.opti_signup-company-label, label.k-form-field.opti_signup-primary-label  {
+        margin-bottom: 0 !important;
+        clear: both;
+    }
+}
+
+.k-form .k-form-field > span:not(.k-widget){
+    margin: 0;
+}
+
+.opti_signup-button{
+    text-align: center;
+    width: 100%;
+}
+
+.k-form .k-form-field.opti_signup-captcha,
+.opti_captcha-canvas,
+.opti_captcha-text {
+  margin-bottom: 0 !important;
+}
+
+.opti_captcha-error{
+    position: relative;
+    top: -7px;
+}
+
+.opti_loader {
+    z-index: 999999;
+}

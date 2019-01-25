@@ -1,0 +1,37 @@
+<section id="opti_WrapperID">
+
+    <!-- start this left panle for Desktop -->
+      <app-portal-left *ngIf='isMobile == false'></app-portal-left>
+      <!-- <app-left *ngIf='isMobile == false'></app-left> -->
+    <!-- end this left panle for Desktop -->
+
+    <!-- right panel start -->
+      <section id="opti_RightPanelID" class="">
+          
+          <!-- start Top Bar Section -->
+            <!-- <app-top></app-top> -->
+            <app-portal-top></app-portal-top>
+          <!-- end Top Bar Section -->
+
+          <!-- left panel for for mobile -->
+            <!-- <app-left *ngIf='isMobile == true'></app-left> -->
+            <app-portal-left *ngIf='isMobile == true'></app-portal-left>
+          <!-- end left for mobile -->
+          
+          <!-- content section strat -->
+          <section id="opti_MainContentID" class="position-relative" style="overflow-x: hidden !important;">
+            <div style="padding: 10px;">
+              <router-outlet></router-outlet>
+            </div>  
+          </section>  
+          <!-- end content section strat -->
+          
+          <!-- right section start -->
+          <app-portal-right [currentSidebarInfo]="currentSidebarInfo" *ngIf="localRightSectionContainer==true"></app-portal-right>
+          
+          <!-- right section end -->
+
+      </section>
+    <!-- right panel end -->
+
+</section>

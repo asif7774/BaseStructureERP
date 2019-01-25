@@ -1,0 +1,13 @@
+@import '../../_typography-button-layout';
+
+#opti_DashboardID {
+    background: $white;
+    height: calc(100vh - 85px);
+    border-radius: 5px;
+}
+
+kendo-chart.k-chart.k-widget {
+    box-shadow: 0px 1px 15px $input-border-color; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,149 @@
+<div class="opti_sales-order-detail-attchment position-relative h-100" id="opti_SalesOrderDetailAttchment">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            
+            <!-- file upload section start -->
+            <ng-container *ngIf="showGrid==false">
+                    
+              <!-- loader start -->
+                <div class="opti_loader opti_loader-attachment-tab" *ngIf="showLoader==true">
+                    <div class="opti_spinner"></div>
+                </div>
+                <!-- loader end -->
+
+                <ng-container *ngIf="showLoader==false">
+                    <label class="opti_custom-file-upload">
+                        <input #file type="file" multiple (change)="upload(file.files)"  />
+                        <!-- accept=".png,.jpg" -->
+                        <img src="{{imgPath}}/common/image-upload.svg" width="16px" height="16px" /> Upload
+                    </label>
+                    <!-- {{selectedFileName}} -->
+                    <br />
+
+                    <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+                        {{progress}}%
+                    </span>
+
+                    <span style="font-weight:bold;color:green;" *ngIf="message">
+                        {{message}}
+                    </span>
+
+                    <div class="text-right">
+                        <button (click)="back()">Cancel</button>
+                    </div>
+
+                </ng-container>
+            </ng-container>
+            <!-- file upload section end -->
+
+
+            <!-- start attachement grid -->
+            <ng-container *ngIf="showGrid==true">
+
+                <!-- loader start -->
+                <div class="opti_loader opti_loader-attachment-tab" *ngIf="showLoader==true">
+                    <div class="opti_spinner"></div>
+                </div>
+                <!-- loader end -->
+
+
+                <!-- <div class="center">
+                    <file-drop headertext="Drop files here" (onFileDrop)="dropped($event)" 
+                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                        <span>optional content (don't set headertext then)</span>
+                    </file-drop>
+                    <div class="upload-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody class="upload-name-style">
+                                <tr *ngFor="let item of files; let i=index">
+                                    <td><strong>{{ item.relativePath }}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+
+
+                
+                <ng-container *ngIf="showLoader==false">
+
+                  <file-drop headertext="" (onFileDrop)="dropped($event)">
+
+                      <kendo-grid 
+                      [kendoGridBinding]="gridData" 
+                      [resizable]="false" 
+                      [pageSize]="50" 
+                      [pageable]="true" 
+                      [sortable]="true"
+                      [filterable]=isColumnFilterAttachementsGrid 
+                      [groupable]="false" 
+                      [columnMenu]="{ columnChooser: false }"
+                      [height]=gridHeight-67 
+                      [selectable]="true" 
+                      name="gridAttachmentData" 
+                      #AttachementsTab>
+
+                          <!-- grid template start -->
+                          <ng-template kendoGridToolbarTemplate>
+                              <!-- show hide column start show hide -->
+                              <kendo-grid-column-chooser class="float-left"></kendo-grid-column-chooser>
+
+                              <!-- checkbox -->
+                              <form class="k-form opti_show-hide-grid-column-filter float-left">
+                                  <div class="k-form-field">
+                                      <input type="checkbox" id="opti_ColumnFilterattachementID" [(ngModel)]="isColumnFilterAttachementsGrid" class="k-checkbox"
+                                          name="columnfilter" />
+                                      <label class="k-checkbox-label" for="opti_ColumnFilterattachementID">Enable Filter</label>
+                                  </div>
+                              </form>
+
+                              <!-- xlsx button start -->
+                              <button type="button" kendoGridExcelCommand icon="file-excel" class="float-left opti_grid-toolbar-excelbutton">
+                                  <svg-icon src="{{imgPath}}/common/download.svg" [svgStyle]="{ 'width.px':16, 'height.px':16}"></svg-icon>
+                              </button>
+
+                              <!-- add items -->
+                              <div class="float-right">
+                                  <svg-icon #showAddAttachementForm src="{{imgPath}}/common/add.svg" (click)="showAttachementForm()" [svgStyle]="{ 'width.px':16, 'height.px':16}"
+                                      class="opti_vertical-align" style="height: 30px;cursor: pointer;display: inline-flex;"></svg-icon>
+                              </div>
+                          </ng-template>
+                          <!-- grid template end -->
+
+                          <kendo-grid-column field="AttachmentId" title="" [width]="50" [filterable]="false" [sortable]="false" >
+                                  <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex"> 
+                                      <!-- <a href="http://139.144.10.218:5000/Upload/e70754db-1b84-4285-bece-101f79f6d04c/cats-cute-animals-kitten-Favim.com-2144514%20(3).jpg" target="_blank">view</a> -->
+                                      <!-- <span  (click)="download(dataItem.AttachmentId)" class="opti_mouse-pointer" style="color: #1fa2ff;">Download</span> -->
+                                      <svg-icon  src="{{imgPath}}/common/download.svg" (click)="download(dataItem.AttachmentId)" [svgStyle]="{ 'width.px':16, 'height.px':16}"></svg-icon>
+                                  </ng-template>
+                          </kendo-grid-column>
+
+                          <kendo-grid-column field="AttachmentName" title="Name" [width]="160"></kendo-grid-column>
+                          <kendo-grid-column field="SizeInKb" title="Size(In Bytes)" [width]="140" filter="numeric"></kendo-grid-column>
+                          <kendo-grid-column field="AttachmentTypeText" title="Attachment Type" [width]="140"></kendo-grid-column>
+                          <kendo-grid-column field="CreatedByName" title="Created By" [width]="150"></kendo-grid-column>
+                                                        
+                          <!-- xlsx template start -->
+                          <kendo-grid-excel fileName="attachements.xlsx"></kendo-grid-excel>
+                          <!-- xlsx template end -->
+
+                      </kendo-grid>
+
+                  </file-drop>    
+
+                </ng-container>
+
+            </ng-container>
+            <!-- end attachement grid -->
+           
+  
+        </div>
+      </div>
+    </div>
+  </div>   

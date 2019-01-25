@@ -1,0 +1,266 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <h4>
+            Themes <span class="float-right"><img src="assets/images/common/close-theme-panel.svg" (click)="onClose();" class="opti_mouse-pointer" alt="Close Right Panel" width="15" height="15" /></span>
+          </h4>  
+          <!-- theme change  -->
+          <div id="opti_changeThemeID" class="position-relative" [perfectScrollbar]="" style="height: calc(100vh - 180px);">
+            
+            <!-- new code theme changer -->
+            <form class="k-form">
+                <div class="k-form-field">
+                    <div class="opti_theme_outer">
+                        <input type="radio" name="themeColor" id="bluelagoo" class="k-radio" (change)="onThemeChange(bluelagooColor)" [checked]="selectedColor==bluelagooColor" />
+                        <label class="k-radio-label" for="bluelagoo">Bluelagoo</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#0052d4;"></span>
+                            <span style="background-color:rgba(0, 82, 212, 0.2);"></span>
+                            <span style="background-color:#6fb1fc;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Borabora <input type="radio" name="themeColor" id="borabora" (change)="onThemeChange(boraboraColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="borabora" class="k-radio" (change)="onThemeChange(boraboraColor)" [checked]="selectedColor==boraboraColor" />
+                        <label class="k-radio-label" for="borabora">Borabora</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#2bc0e4;"></span>
+                            <span style="background-color:rgba(43, 192, 228, 0.2);"></span>
+                            <span style="background-color:#eaecc6;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Castify <input type="radio" name="themeColor" id="castify" (change)="onThemeChange(castfyColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="castify" class="k-radio" (change)="onThemeChange(castfyColor)" [checked]="selectedColor==castfyColor" />
+                        <label class="k-radio-label" for="castify">Castify</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#ff8382;"></span>
+                            <span style="background-color:rgba(255, 131, 130, 0.2);"></span>
+                            <span style="background-color:#ff9e76;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Coffee <input type="radio" name="themeColor" id="coffee" (change)="onThemeChange(coffeeColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="coffee" class="k-radio" (change)="onThemeChange(coffeeColor)" [checked]="selectedColor==coffeeColor" />
+                        <label class="k-radio-label" for="coffee">Coffee</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#595959;"></span>
+                            <span style="background-color:rgba(89, 89, 89, 0.2);"></span>
+                            <span style="background-color:#f0e9d9;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Green <input type="radio" name="themeColor" id="green" (change)="onThemeChange(greenColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="green" class="k-radio" (change)="onThemeChange(greenColor)" [checked]="selectedColor==greenColor" />
+                        <label class="k-radio-label" for="green">Green</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#8bcb6e;"></span>
+                            <span style="background-color:rgba(139, 203, 110, 0.2);"></span>
+                            <span style="background-color:#d7f1cb;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Maldive <input type="radio" name="themeColor" id="maldive" (change)="onThemeChange(maldiveColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="maldive" class="k-radio" (change)="onThemeChange(maldiveColor)" [checked]="selectedColor==maldiveColor" />
+                        <label class="k-radio-label" for="maldive">Maldive</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#0ed2f7;"></span>
+                            <span style="background-color:rgba(14, 210, 247, 0.2);"></span>
+                            <span style="background-color:#b2fefa;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>New Trend <input type="radio" name="themeColor" id="newtrend" (change)="onThemeChange(newtrendColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="newtrend" class="k-radio" (change)="onThemeChange(newtrendColor)" [checked]="selectedColor==newtrendColor" />
+                        <label class="k-radio-label" for="newtrend">New Trend</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#329ac2;"></span>
+                            <span style="background-color:rgba(50, 154, 194, 0.2);"></span>
+                            <span style="background-color:#9cb3b9;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Skype <input type="radio" name="themeColor" id="skype" (change)="onThemeChange(skypeColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="skype" class="k-radio" (change)="onThemeChange(skypeColor)" [checked]="selectedColor==skypeColor" />
+                        <label class="k-radio-label" for="skype">Skype</label>
+
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#3dbfe6;"></span>
+                            <span style="background-color:rgba(61, 191, 230, 0.2);"></span>
+                            <span style="background-color:#e4f2f7;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Stripe <input type="radio" name="themeColor" id="stripe" (change)="onThemeChange(stripeColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="stripe" class="k-radio" (change)="onThemeChange(stripeColor)" [checked]="selectedColor==stripeColor"/>
+                        <label class="k-radio-label" for="stripe">Stripe</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#1fa2ff;"></span>
+                            <span style="background-color:rgba(31, 162, 255, 0.2);"></span>
+                            <span style="background-color:#9dd0f3;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Sunrise <input type="radio" name="themeColor" id="sunrise" (change)="onThemeChange(sunriseColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="sunrise" class="k-radio" (change)="onThemeChange(sunriseColor)" [checked]="selectedColor==sunriseColor" />
+                        <label class="k-radio-label" for="sunrise">Sunrise</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#ff512f;"></span>
+                            <span style="background-color:rgba(255, 81, 47, 0.2);"></span>
+                            <span style="background-color:#f09819;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        
+                    <div class="opti_theme_outer">
+                        <!-- <div>Urban <input type="radio" name="themeColor" id="urban" (change)="onThemeChange(urbanColor)"></div> -->
+
+                        <input type="radio" name="themeColor" id="urban" class="k-radio" (change)="onThemeChange(urbanColor)" [checked]="selectedColor==urbanColor" />
+                        <label class="k-radio-label" for="urban">Urban</label>
+
+                        <div class="opti_theme_color-container">
+                            <span style="background-color:#ff804d;"></span>
+                            <span style="background-color:rgba(255, 128, 77, 0.2);"></span>
+                            <span style="background-color:#73a9c9;"></span>
+                            <span style="background-color:#fff;"></span>
+                            <span style="background-color:#f0f0f0;"></span>
+                        </div>
+                    </div>
+                </div>    
+            </form>
+            <!-- ned code theme changer -->
+
+
+              <!-- <button (click)="onThemeChange(opalColor)" id="opal">
+                  Opal
+              </button>
+              <button id="bootstrap">
+                  Boot-V3
+              </button>
+              <br/>
+              <br/>
+              <button id="urban" (click)="onThemeChange(urbanColor)">
+                  Urban
+              </button>
+              <br/>
+              <br/>
+              <button id="skype" (click)="onThemeChange(skypeColor)">
+                  Skype
+              </button>
+              <br/>
+              <br/>
+              <button id="green" (click)="onThemeChange(greenColor)">
+                  Green
+              </button>
+              <br/>
+              <br/>
+              <button id="stripe" (click)="onThemeChange(stripeColor)">
+                  Stripe
+              </button>
+              <br/>
+              <br/>
+              <button id="coffee" (click)="onThemeChange(coffeeColor)">
+                  Coffee
+              </button>
+              <br/>
+              <br/>
+              <button id="newtrend" (click)="onThemeChange(newtrendColor)">
+                  New Trend 2018
+              </button>
+              <br/>
+              <br/>
+              <button id="castify" (click)="onThemeChange(castfyColor)">
+                  Castfy
+              </button>
+              <br/>
+              <br/>
+              <button id="sunrise" (click)="onThemeChange(sunriseColor)">
+                  Sunrise
+              </button>
+              <br/>
+              <br/>
+              <button id="maldive" (click)="onThemeChange(maldiveColor)">
+                  Maldive
+              </button>
+              <br/>
+              <br/>
+              <button id="borabora" (click)="onThemeChange(boraboraColor)">
+                  Borabora
+              </button>
+              <br/>
+              <br/>
+              <button id="bluelagoo" (click)="onThemeChange(bluelagooColor)">
+                  Bluelagoo
+              </button> -->
+          </div>
+          <!-- end theme change -->
+      </div>
+   </div>
+</div>

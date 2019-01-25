@@ -1,0 +1,31 @@
+@import 'src/assets/css/web/account_module/account';
+
+// button:last-child, button:first-child {
+//     margin: 0;
+// }
+
+button{
+    width: 100%;
+    font-size: 14px;
+    // padding-top: 15px;
+    // padding-bottom: 15px;
+    // margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+button:first-child {
+    margin-bottom: 15px;
+}
+
+.panel-body{
+    text-align: center;
+}
+
+.opti_account-logo{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+button:last-child{
+    margin: 0;
+}

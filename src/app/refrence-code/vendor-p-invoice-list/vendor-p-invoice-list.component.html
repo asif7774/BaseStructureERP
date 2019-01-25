@@ -1,0 +1,111 @@
+<div id="opti_InvoiceListID">   
+  <!-- loader start -->
+   <div class="opti_loader opti_loader-module-grid-list" *ngIf="showLoader">
+       <div class="opti_spinner"></div>
+   </div>
+   <!-- loader end -->  
+
+   <ng-container *ngIf="showLoader==false">
+       <!-- for normal user   -->
+       <!-- <div *ngIf="systemAdmin!='true'"> -->
+        <div>
+            <kendo-grid 
+            [kendoGridBinding]="gridData" 
+            [resizable]="false" 
+            [pageSize]="50" 
+            [pageable]="true" 
+            [sortable]="true"  
+            [filterable]=isColumnFilter
+            [groupable]=isColumnGroup 
+            [columnMenu]="{ columnChooser: false }" 
+            [height]=gridHeight 
+            [selectable]="true" 
+            (selectionChange)="openInvoiceDetailOnSelectInvoiceOrder($event)"
+            #gridItem>
+                <!-- [kendoGridBinding]="gridData | customPipeItem:searchRequest"  -->
+                <!-- (selectionChange)="openInqueryDetailOnSelectInquery(gridItem, $event, true, gridItem)" -->
+
+                <!-- grid template start -->
+                <ng-template kendoGridToolbarTemplate>
+                    <!-- show hide column start show hide -->
+                    <kendo-grid-column-chooser class="float-left opti_hide-in-mobile"></kendo-grid-column-chooser>
+
+                    <!-- checkbox -->
+                    <form class="k-form opti_show-hide-grid-column-filter float-left opti_hide-in-mobile">
+                        <div class="k-form-field float-left">
+                            <input #chkFilter type="checkbox" (change)="onFilterChange(chkFilter,gridItem)" id="opti_PaymentListColumnFilterID" [(ngModel)]="isColumnFilter" class="k-checkbox" name="columnfilter" />
+                            <label class="k-checkbox-label" for="opti_PaymentListColumnFilterID">Enable Filter</label>
+                        </div>
+
+                        <div class="k-form-field float-left">
+                            <input type="checkbox" id="opti_PaymentColumnGroupID"  [(ngModel)]="isColumnGroup" class="k-checkbox" name="columnGroup" />
+                            <label class="k-checkbox-label" for="opti_PaymentColumnGroupID">Enable Grouping</label>
+                        </div>
+                    </form>
+
+                    <!-- export -->
+                    <button type="button" kendoGridExcelCommand icon="file-excel" class="float-left opti_grid-toolbar-excelbutton opti_hide-in-mobile">
+                        <svg-icon src="{{imgPath}}/common/download.svg" [svgStyle]="{ 'width.px':16, 'height.px':16}"></svg-icon>
+                    </button>
+
+
+                    <div class="float-right opti_grid-mainlist-mobile-search opti_right-top-sec-grid">
+                        <form class="k-form opti_common-search-form float-left p-0">
+                            <label class="k-form-field opti_common-search-label">
+                                <input type="text" class="k-textbox" name="searchRequest" [(ngModel)]="searchRequest" />
+                                <span class="opti_vertical-align opti_mouse-pointer"><img src="{{imgPath}}/common/search-black.svg" class="" alt="Search" width="15" /></span>
+                            </label>
+                        </form>
+
+                        <svg-icon src="{{imgPath}}/common/add.svg" (click)="addInvoiceOnClickAdd(true)" [svgStyle]="{ 'width.px':16, 'height.px':16}"
+                                class="opti_vertical-align float-left opti_icon-spacing opti_add-invoice"></svg-icon>
+                    </div>
+                </ng-template>
+
+                <!-- grid for mobile start -->
+                <kendo-grid-column media="(max-width: 767px)" title="Payment List" class="opti_mobile-grid-td">
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <dl class="opti_mobile_grid_dl">
+                            <dt>Invoice#</dt>
+                            <dd>{{ dataItem.Invoice }}</dd>
+
+                            <dt>PO Ref.#</dt>
+                            <dd>{{ dataItem.PORef }}</dd>
+
+                            <dt>Vendor</dt>
+                            <dd>{{ dataItem.Vendor }}</dd>
+
+                            <dt>Invoice Date</dt>
+                            <dd>{{ dataItem.InvoiceDate }}</dd>
+                        </dl>
+
+                        <dl class="opti_mobile_grid_dl">
+                            <dt>Invoice Amount <span class="opti_arrow-grid-detail float-right text-center opti_vertical-align">&rsaquo;</span></dt>
+                            <dd>{{ dataItem.InvoiceAmount }}</dd>
+
+                            <dt>Payment Due Date</dt>
+                            <dd>{{ dataItem.PaymentDueDate }}</dd>
+
+                            <dt>Status</dt>
+                            <dd>{{ dataItem.Status }}</dd>
+                        </dl>
+                    </ng-template>
+                </kendo-grid-column>
+                <!-- grid for mobile end -->
+
+
+                <kendo-grid-column media="(min-width: 768px)" field="Invoice"  title="Invoice#" [width]="160"></kendo-grid-column>
+                <kendo-grid-column media="(min-width: 768px)" field="PORef" title="PO Ref.#" [width]="160"></kendo-grid-column>
+                <kendo-grid-column media="(min-width: 768px)" field="Vendor" title="Vendor" [width]="160" ></kendo-grid-column>
+                <kendo-grid-column media="(min-width: 768px)" field="InvoiceDate" title="Invoice Date" [width]="160" filter="date" type=date format="{0:dd MMM yy}" ></kendo-grid-column>
+                <kendo-grid-column media="(min-width: 768px)" field="InvoiceAmount" title="Invoice Amount" [width]="160"></kendo-grid-column>
+                <kendo-grid-column media="(min-width: 768px)" field="PaymentDueDate" title="Payment Due Date" [width]="160" filter="date" type=date format="{0:dd MMM yy}"></kendo-grid-column>
+                <kendo-grid-column media="(min-width: 768px)" field="Status" title="Status" [width]="160"></kendo-grid-column>
+                
+                <!-- xlsx template start -->
+                <kendo-grid-excel fileName="vendor-invoice-list.xlsx"></kendo-grid-excel>
+                <!-- xlsx template end -->
+            </kendo-grid>
+        </div>
+   </ng-container>
+</div>

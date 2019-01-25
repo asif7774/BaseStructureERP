@@ -1,0 +1,344 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-6 ">
+        <div class="card">
+            <div class="card-body">
+              <form class="opti_input-group-form">
+                <fieldset>
+                    <legend>Input Group Form</legend>
+                    <!-- item groups markup -->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">First Name</span>
+                      </div>
+                      <input class="k-textbox form-control-sm" placeholder="Your Name" />
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">Last Name</span>
+                      </div>
+                      <input class="k-textbox form-control-sm" placeholder="Your Last Name" />
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">Numeric Box</span>
+                      </div>
+                      <kendo-numerictextbox class="form-control form-control-sm" [value]="10" [min]="0" [max]="100"></kendo-numerictextbox>
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">Drodown</span>
+                      </div>
+                      <kendo-dropdownlist class="form-control form-control-sm" [data]="listItems" [value]="'Basketball'"></kendo-dropdownlist>
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">Combo</span>
+                      </div>
+                      <kendo-combobox class="form-control form-control-sm" [data]="listItems" [value]="'Basketball'"></kendo-combobox>
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">MultiSelect</span>
+                      </div>
+                      <kendo-multiselect class="form-control form-control-sm" [data]="listItems" [value]="value"></kendo-multiselect>
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Message</span>
+                      </div>
+                      <textarea class="k-textarea">Lorem Ipsum is simply dummy text.</textarea>
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">Radio</span>
+                      </div>
+                      <div class="opti_input-group-radio">
+                        <input type="radio" name="group" id="radio7" class="k-radio" checked />
+                        <label class="k-radio-label" for="radio7">RadioButton 1</label>
+    
+                        <input type="radio" name="group" id="radio8" class="k-radio" disabled />
+                        <label class="k-radio-label" for="radio8">RadioButton 2</label>
+    
+                        <input type="radio" name="group" class="k-radio" id="radio9" />
+                        <label class="k-radio-label" for="radio9">RadioButton 3</label>
+                      </div>
+
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">Checkbox</span>
+                      </div>
+                      <div class="opti_input-group-checkbox">
+                        <input type="checkbox" id="ch7" class="k-checkbox" checked />
+                        <label class="k-checkbox-label" for="ch7">Checkbox 1</label>
+
+                        <input type="checkbox" id="ch8" class="k-checkbox" checked disabled />
+                        <label class="k-checkbox-label" for="ch8">Checkbox 2</label>
+
+                        <input type="checkbox" id="ch9" class="k-checkbox">
+                        <label class="k-checkbox-label" for="ch9">Checkbox 3</label>
+                      </div>  
+                    </div><br>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text form-control-sm">$</span>
+                      </div>
+                      <kendo-numerictextbox class="form-control form-control-sm" [value]="10" [decimals]="0">
+                      </kendo-numerictextbox>
+                      <div class="input-group-append">
+                        <span class="input-group-text form-control-sm">.99</span>
+                      </div>
+                    </div>
+                </fieldset>    
+              </form>
+
+            </div>
+        </div>
+    </div> 
+
+    <div class="col-md-6 ">
+        <div class="card">
+          <div class="card-block">
+            <form class="k-form-inline">
+                <fieldset>
+                  <legend>.k-form-inline</legend>
+                  <label class="k-form-field">
+                      <span>First Name</span>
+                      <input class="k-textbox" placeholder="Your Name" />
+                  </label>
+                  <label class="k-form-field">
+                      <span>Last Name</span>
+                      <input class="k-textbox" placeholder="Your Last Name" />
+                  </label>
+  
+                  <label class="k-form-field">
+                      <span>Numeric Box</span>
+                      <kendo-numerictextbox class="form-control" [value]="10" [min]="0" [max]="100"></kendo-numerictextbox>
+                  </label>
+  
+                  <label class="k-form-field">
+                      <span>Drodown</span>
+                      <kendo-dropdownlist class="form-control" [data]="listItems" [value]="'Basketball'"></kendo-dropdownlist>
+                  </label>
+  
+                  <label class="k-form-field">
+                      <span>Combo</span>
+                      <kendo-combobox class="form-control" [data]="listItems" [value]="'Basketball'"></kendo-combobox>
+                  </label>
+  
+                  <label class="k-form-field">
+                      <span>MultiSelect</span>
+                      <kendo-multiselect class="form-control" [data]="listItems" [value]="value"></kendo-multiselect>
+                  </label>
+  
+                  <label class="k-form-field">
+                      <span>Message</span>
+                      <textarea class="k-textarea">Lorem Ipsum is simply dummy text.</textarea>
+                  </label>
+                  <label class="k-form-field">
+                      <span>Radio</span>
+  
+                      <input type="radio" name="group" id="radio4" class="k-radio" checked />
+                      <label class="k-radio-label" for="radio4">RadioButton 1</label>
+  
+                      <input type="radio" name="group" id="radio5" class="k-radio" disabled />
+                      <label class="k-radio-label" for="radio5">RadioButton 2</label>
+  
+                      <input type="radio" name="group" class="k-radio" id="radio6" />
+                      <label class="k-radio-label" for="radio6">RadioButton 3</label>
+                  </label>
+                  <label class="k-form-field">
+                      <span>Checkbox</span>
+                      
+                      <input type="checkbox" id="ch4" class="k-checkbox" checked />
+                      <label class="k-checkbox-label" for="ch4">Checkbox 1</label>
+  
+                      <input type="checkbox" id="ch5" class="k-checkbox" checked disabled />
+                      <label class="k-checkbox-label" for="ch5">Checkbox 2</label>
+  
+                      <input type="checkbox" id="ch6" class="k-checkbox">
+                      <label class="k-checkbox-label" for="ch6">Checkbox 3</label>
+                  </label>
+                </fieldset>
+            </form>
+          </div> 
+        </div>
+    </div>  
+
+    <div class="col-md-6 mt-5">
+      <div class="card">
+        <div class="card-block">
+            <form class="k-form">
+                <fieldset>
+                  <legend>.k-form</legend>
+                  <label class="k-form-field">
+                      <span>First Name</span>
+                      <input class="k-textbox" placeholder="Your Name" />
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Last Name</span>
+                      <input class="k-textbox" placeholder="Your Last Name" />
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Numeric Box</span>
+                      <kendo-numerictextbox class="form-control" [value]="10" [min]="0" [max]="100"></kendo-numerictextbox>
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Drodown</span>
+                      <kendo-dropdownlist class="form-control" [data]="listItems" [value]="'Basketball'"></kendo-dropdownlist>
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Combo</span>
+                      <kendo-combobox class="form-control" [data]="listItems" [value]="'Basketball'"></kendo-combobox>
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>MultiSelect</span>
+                      <kendo-multiselect class="form-control" [data]="listItems" [value]="value"></kendo-multiselect>
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Message</span>
+                      <textarea class="k-textarea">Lorem Ipsum is simply dummy text.</textarea>
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Radio</span>
+                      
+                      <input type="radio" name="group" id="radio1" class="k-radio" checked />
+                      <label class="k-radio-label" for="radio1">RadioButton 1</label>
+  
+                      <input type="radio" name="group" id="radio2" class="k-radio" disabled />
+                      <label class="k-radio-label" for="radio2">RadioButton 2</label>
+  
+                      <input type="radio" name="group" class="k-radio" id="radio3" />
+                      <label class="k-radio-label" for="radio3">RadioButton 3</label>
+                  </label>
+
+                  <label class="k-form-field">
+                      <span>Checkbox</span>
+                      
+                      <input type="checkbox" id="ch1" class="k-checkbox" checked />
+                      <label class="k-checkbox-label" for="ch1">Checkbox 1</label>
+
+                      <input type="checkbox" id="ch2" class="k-checkbox" checked disabled />
+                      <label class="k-checkbox-label" for="ch2">Checkbox 2</label>
+
+                      <input type="checkbox" id="ch3" class="k-checkbox">
+                      <label class="k-checkbox-label" for="ch3">Checkbox 3</label>
+                  </label>
+                </fieldset>  
+            </form>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- bootstrap form start -->
+    <div class="col-md-6 mt-5">
+      <div class="card">
+        <div class="card-body opti_bootstrap-form">
+          <!-- small form items -->
+          <fieldset>
+              <legend>Bootstrap Form</legend>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">First Name</label>
+                <div class="col-sm-8">
+                  <input class="k-textbox w-100" placeholder="Your Name" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Last Name</label>
+                <div class="col-sm-8">
+                  <input class="k-textbox w-100" placeholder="Your Last Name" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Numeric Box</label>
+                <div class="col-sm-8">
+                  <kendo-numerictextbox class="form-control" [value]="10" [min]="0" [max]="100"></kendo-numerictextbox>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Drodown</label>
+                <div class="col-sm-8">
+                  <kendo-dropdownlist class="form-control" [data]="listItems" [value]="'Basketball'"></kendo-dropdownlist>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Combo</label>
+                <div class="col-sm-8">
+                    <kendo-combobox class="form-control" [data]="listItems" [value]="'Basketball'"></kendo-combobox>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">MultiSelect</label>
+                <div class="col-sm-8">
+                    <kendo-multiselect class="form-control" [data]="listItems" [value]="value"></kendo-multiselect>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Message</label>
+                <div class="col-sm-8">
+                    <textarea class="k-textarea">Lorem Ipsum is simply dummy text.</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Radio</label>
+                <div class="col-sm-8">
+                    <input type="radio" name="group" id="radio10" class="k-radio" checked />
+                    <label class="k-radio-label" for="radio10">RadioButton 1</label>
+
+                    <input type="radio" name="group" id="radio11" class="k-radio" disabled />
+                    <label class="k-radio-label" for="radio11">RadioButton 2</label>
+
+                    <input type="radio" name="group" class="k-radio" id="radio12" />
+                    <label class="k-radio-label" for="radio12">RadioButton 3</label>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Checkbox</label>
+                <div class="col-sm-8">
+                    <input type="checkbox" id="ch10" class="k-checkbox" checked />
+                    <label class="k-checkbox-label" for="ch10">Checkbox 1</label>
+
+                    <input type="checkbox" id="ch11" class="k-checkbox" checked disabled />
+                    <label class="k-checkbox-label" for="ch11">Checkbox 2</label>
+
+                    <input type="checkbox" id="ch12" class="k-checkbox">
+                    <label class="k-checkbox-label" for="ch12">Checkbox 3</label>
+                </div>
+              </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <!-- bootstrap form end -->
+    
+
+  </div> 
+</div>       

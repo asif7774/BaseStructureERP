@@ -1,0 +1,25 @@
+@import 'src/assets/css/web/dashboard/dashboard';
+
+@media screen and (max-width: 479px){
+.opti_zoom-donut-only-mobile{
+    zoom: 0.75;
+}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+.opti_zoom-donut-only-mobile{
+    zoom: 0.75;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+.opti_zoom-donut-only-mobile{
+    zoom: 0.75;
+}   
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+.opti_zoom-donut-only-mobile{
+    zoom: 0.75;
+}   
+}

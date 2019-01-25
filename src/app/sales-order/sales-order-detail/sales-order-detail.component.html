@@ -1,0 +1,96 @@
+<div #optiRightAddInquiry class="opti_sales-order-detail" id="opti_SalesOrderDetailID">
+    <!-- tab start heading start -->
+    <div class="position-relative opti_tab-outer">
+      <ul #optiTab class="opti_tab position-relative tabs clearfix" id="opti_TabID" [perfectScrollbar]="configX">
+          <li class="opti_tablinks active" (click)="openTab($event, 'home', 'horizontal')">
+            <a href="javascript:void('0');">Header</a>
+          </li>
+          <li class="opti_tablinks" (click)="openTab($event, 'content', 'horizontal')">
+            <a href="javascript:void('0');">Content</a>
+          </li>
+          <li class="opti_tablinks" (click)="openTab($event, 'attachement', 'horizontal')">
+            <a href="javascript:void('0');">Attachements</a>
+          </li>
+          <li class="opti_tablinks" (click)="openTab($event, 'notes', 'horizontal')">
+            <a href="javascript:void('0');">Notes</a>
+          </li>
+          <li class="opti_tablinks" (click)="openTab($event, 'vtab', 'horizontal')">
+            <a href="javascript:void('0');">V Tab</a>
+          </li>
+      </ul>
+    </div>
+    <!-- tab start heading end -->
+
+    <!-- tab content start -->
+    <div id="" *ngIf="tabName=='home'" class="opti_tabcontent">
+      <app-sales-order-detail-home></app-sales-order-detail-home>
+    </div>
+
+    <div id="" *ngIf="tabName=='content'" class="opti_tabcontent">
+      <app-sales-order-detail-content></app-sales-order-detail-content>
+    </div>
+
+    <div id="" *ngIf="tabName=='attachement'" class="opti_tabcontent">
+      <app-sales-order-detail-attachment></app-sales-order-detail-attachment>
+    </div>
+
+    <div id="" *ngIf="tabName=='notes'" class="opti_tabcontent">
+      <app-sales-order-detail-notes></app-sales-order-detail-notes>
+    </div>
+    <div id="" *ngIf="tabName=='vtab'" class="opti_tabcontent">
+      <!-- vertical tab start -->
+      <div class="position-relative h-100" id="" [perfectScrollbar]="">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+
+              <!-- ==============Tab Title================ -->
+              <div class="position-relative opti_vertical-tab-outer float-left" id="">
+                  <ul #optiTabvertical class="opti_tab tabs clearfix" id="opti_VerticalTabID">
+                      <li class="opti_tablinks-vertical active" id="" (click)="openTab($event, 'vhome', 'vertical')">
+                          <a href="javascript:void('0');">
+                              <svg-icon src="{{imgPath}}/purchase-inquiries/home.svg" [svgStyle]="{ 'width.px':30, 'height.px':30, 'fill':selectedThemeColor }"></svg-icon>
+                          </a>
+                      </li>
+                      <li class="opti_tablinks-vertical" (click)="openTab($event, 'vattachement', 'vertical')">
+                          <a href="javascript:void('0');">
+                              <svg-icon src="{{imgPath}}/purchase-inquiries/attchment.svg" [svgStyle]="{ 'width.px':30, 'height.px':30, 'fill':selectedThemeColor }"></svg-icon>
+                          </a>
+                      </li>
+                      <li class="opti_tablinks-vertical" (click)="openTab($event, 'vnotes', 'vertical')">
+                          <a href="javascript:void('0');">
+                              <svg-icon src="{{imgPath}}/purchase-inquiries/notes.svg" [svgStyle]="{ 'width.px':30, 'height.px':30, 'fill':selectedThemeColor }"></svg-icon>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- ============================== -->
+
+              <!-- =============Start Tab Content================= -->
+              <div id="" *ngIf="vTabName=='vhome'" class="opti_vertical-tabcontent float-left">
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                      Home
+                  </div>
+              </div>
+
+              <div id="" *ngIf="vTabName=='vattachement'" class="opti_vertical-tabcontent float-left">
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                      Attachement
+                  </div>
+              </div>
+
+              <div id="" *ngIf="vTabName=='vnotes'" class="opti_vertical-tabcontent float-left">
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                      Notes
+                  </div>
+              </div>
+              <!-- =============End Tab Content================= -->
+
+            </div>
+          </div>
+        </div>
+      </div>      
+      <!-- end vertical tab start -->
+    </div>
+    <!-- tab content end -->
+</div>  

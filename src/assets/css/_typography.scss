@@ -1,0 +1,76 @@
+@import '_base';
+
+// font size
+$font-size-small: 12px;
+$font-size-regular: 15px;
+$font-size-large: 24px;
+$font-size-x-large: 32px;
+$font-size-xx-large: 48px;
+$font-size-xxx-large: 64px;
+$font-size-xxxx-large: 96px;
+
+
+// font weight
+$font-weight-light:	400;
+$font-weight-regular:400;
+$font-weight-bold:	700;
+
+#opti_ThemeSettingID {
+    background-color: #f0f0f0;
+}
+
+
+////////////////////////////////////////////////////////////////
+/////////////////////2. Common css start///////////////////////////
+////////////////////////////////////////////////////////////////
+body{
+    @include font($size: $font-size-small,$weight: $font-weight-regular,  $lh: false);
+}
+p{
+    @include font($size: $font-size-regular,$weight: $font-weight-regular,  $lh: false);
+}
+a{
+    @include font($size: $font-size-regular,$weight: $font-weight-regular,  $lh: false);
+    // &:hover{
+       
+    // }
+}
+h1{
+    @include font($size: $font-size-xxx-large,$weight: $font-weight-regular,  $lh: false);
+}
+h2{
+    @include font($size: $font-size-xx-large,$weight: $font-weight-regular,  $lh: false);
+}
+h3{
+    @include font($size: $font-size-x-large,$weight: $font-weight-regular,  $lh: false);
+}
+h4{
+    @include font($size: $font-size-large,$weight: $font-weight-regular,  $lh: false);
+}
+h5{
+    @include font($size: $font-size-regular, $weight: $font-weight-regular,  $lh: false);
+}
+h6{
+    @include font($size: $font-size-small, $weight: $font-weight-regular,  $lh: false);
+}
+
+// Top Bar
+#opti_TopBarID{
+    .opti_user-profile{
+        img{
+            // border:2px solid #fff;
+        }
+    }
+
+    input[type = 'text'], input[type = 'email']{
+        height: 30px;
+        line-height: normal;
+    }
+    
+    input[type = 'text']:focus, input[type = 'email']:focus{
+        border-color: transparent;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem transparent;
+    }
+}
+

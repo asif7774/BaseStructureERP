@@ -1,0 +1,43 @@
+ 
+ <!-- left panel start -->
+ <section id="opti_LeftPanelID" class="position-relative"> 
+     
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12 opti_hide-in-mobile text-center opti_vertical-align opti_device-logo-outer">
+              <!-- logo -->
+              <section class="opti_logo opti_device-logo">
+                <img src="assets/images/logo/large-logo.png" alt="Large Logo" class="opti_large-logo opti_mouse-pointer" />
+                <img src="assets/images/logo/small-logo.png" alt="Logo" class="opti_small-logo opti_mouse-pointer"  />
+              </section>
+          </div>
+      </div>
+  </div>     
+  
+  <section class="opti_left-navigation position-relative" [perfectScrollbar]="">
+        <ul class="opti_left-nav-ul">   
+            <li (click)="listClick($event, 'dashboard')" [ngClass]="{'active': selectedItem == 'dashboard'}"><a roterLink="dashboard" > <svg-icon src="assets/images/left-panel/dashboard.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Dashboard</span></a></li>
+            <!-- <li (click)="listClick($event, 'purchaseinquiry')" [ngClass]="{'active': selectedItem == 'purchaseinquiry'}"><a roterLink="purchaseinquiry"> <svg-icon src="assets/images/left-panel/Purchase-Inquiries.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Purchase Inquiries</span></a></li> -->
+            <!-- <li (click)="listClick($event, 'sales')" [ngClass]="{'active': selectedItem == 'sales'}"><a roterLink="sales"> <svg-icon src="assets/images/left-panel/Sales-Quotations.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Sales Quotations</span></a></li> -->
+            <!-- <li (click)="listClick($event, 'customerpurchaseorder')" [ngClass]="{'active': selectedItem == 'customerpurchaseorder'}"><a roterLink="customerpurchaseorder"> <svg-icon src="assets/images/left-panel/Customer-Purchase-Order.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Customer Purchase Order</span></a></li> -->
+            <li (click)="listClick($event, 'salesorder')" [ngClass]="{'active': selectedItem == 'salesorder'}"><a roterLink="salesorder"> <svg-icon src="assets/images/left-panel/Sales-Order.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Sales Orders</span></a></li>
+            <!-- <li (click)="listClick($event, 'deliverynotes')" [ngClass]="{'active': selectedItem == 'deliverynotes'}"><a roterLink="deliverynotes"> <svg-icon src="assets/images/left-panel/Delivery-Notes.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Delivery Notes</span></a></li>
+            <li (click)="listClick($event, 'purchaseinquiry')" [ngClass]="{'active': selectedItem == 'item7'}"><a roterLink=""> <svg-icon src="assets/images/left-panel/Advance-Shipment-Notes.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Advance Shipment Notes</span></a></li>
+            <li (click)="listClick($event, 'purchaseinquiry')" [ngClass]="{'active': selectedItem == 'item8'}"><a roterLink=""> <svg-icon src="assets/images/left-panel/Open-Invoices.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Open Invoices</span></a></li>
+            <li (click)="listClick($event, 'purchaseinquiry')" [ngClass]="{'active': selectedItem == 'item9'}"><a roterLink=""> <svg-icon src="assets/images/left-panel/Customer-Contracts.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Customer Contracts</span></a></li>
+            <li (click)="listClick($event, 'purchaseinquiry')" [ngClass]="{'active': selectedItem == 'item10'}"><a roterLink=""> <svg-icon src="assets/images/left-panel/Customer-Contacts.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Customer Contacts</span></a></li> -->
+            <li (click)="listClick($event, 'form')" [ngClass]="{'active': selectedItem == 'form'}"><a roterLink="form"> <svg-icon src="assets/images/left-panel/Sales-Order.svg" [svgStyle]="{ 'width.px':20, 'height.px':20, 'fill':selectedThemeColor }"></svg-icon><span>Form Fields</span></a></li>
+        </ul>
+        
+  </section>
+
+  <section id="opti_LeftPanelFooterLogo">
+      <img src="assets/images/logo/poweredbylogo.svg" alt="powered logo">
+  </section>
+  
+
+</section>
+<!-- left panel end -->
+
+<!-- <a routerLink='dashboard'>Dashboard</a><br>
+<a routerLink='purchaseinquiry'> Purchase Inquery</a> -->

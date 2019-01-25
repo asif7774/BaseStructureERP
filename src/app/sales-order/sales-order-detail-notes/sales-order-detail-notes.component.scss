@@ -1,0 +1,18 @@
+@import 'src/assets/css/web/sales-order_module/sales_order';
+.opti_loader-notes-tab-grid{
+    height: calc(100vh - 140px);
+    width: calc(100% - 30px);
+}
+
+.opti_note-meta {
+    width: calc(100% - 55px);
+    float: left;
+}
+.opti_note-action-button-sec{
+    width: 55px;
+}
+
+kendo-grid dl dd{
+    width: 100%;
+    display: flex;
+}

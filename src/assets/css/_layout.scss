@@ -1,0 +1,164 @@
+@import '_base';
+
+// 1. Layout CSS
+// 2. Top Bar CSS
+
+////////////////////////////////////////////////////////////////
+/////////////////////1. Layout css//////////////////////////////
+////////////////////////////////////////////////////////////////
+#opti_WrapperID{
+    display: flex;
+    align-items: stretch;
+
+    // Css Related To Left Panel
+        #opti_LeftPanelID{
+            min-width: 260px;
+            max-width: 260px;
+            // transition: all 0.3s;
+        }
+
+        #opti_LeftPanelID.opti_sidebar-minimize {
+            min-width: 80px;
+            max-width: 80px;
+            
+        }
+        
+        #opti_LeftPanelID{
+            height: 100vh;
+        }
+        
+        .opti_left-navigation{
+            max-height: calc(100% - 200px); // rigt now 200 is random
+            overflow-y: auto;
+            // padding: 10px;
+            margin: 10px;
+            height: auto;
+            border-radius: 5px;
+        }
+    
+    // Css Related To Right Content Area
+        #opti_RightPanelID.opti_sidebar-minimize { // width after close sidebar
+            width: calc(100% - 80px);
+        }
+
+        #opti_RightPanelID{ // width after open sidebar
+            width: calc(100% - 260px);
+        }
+
+        #opti_RightPanelID{
+            height: 100vh;
+        }
+
+    // CSS Related To Main Content Section
+        #opti_MainContentID {
+            height: calc(100% - 65px); // top bar height 65px
+            overflow-y: auto;
+        }
+
+    // Css Related To top panel
+        section#opti_TopBarID {
+            min-height: $top-bar-height;
+        }
+
+    //Opti right section 
+    .opti_right-fix-section {
+        position: fixed;
+        right: 0;
+        background: $white;
+        width: 45%;
+        height: calc(100% - 65px);
+        top: 65px;
+        max-width: 100%;
+        // border-left: 2px solid #c7c7c7;
+        z-index: 99;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
+
+        // tab section under right section
+        .opti_tab {
+            border: none;
+            button{
+                border-radius: 0;
+            }
+        }
+
+        .opti_tabcontent{
+            padding: 15px 0;
+            // height: calc(100% - 30px);
+            height:calc(100vh - 105px);
+            border-top: 1px solid #c7c7c7;
+        }
+
+        .opti_close-icon-right-section{
+            display: inline-flex !important;
+            height: 40px;
+            width: 30px;
+            cursor: pointer;
+        }
+    }    
+}
+
+////////////////////////////////////////////////////////////////
+/////////////////////2. Top Panel /////////////////////////////
+////////////////////////////////////////////////////////////////
+
+// if left panel close
+#opti_RightPanelID.opti_sidebar-minimize{ // .opti_sidebar-minimize can't access this class in top.component that's why we are using here
+    #sidebarCollapse{
+        .opti_backarrow{
+            display: none;
+        }
+        .opti_hamburger{
+            display: block;
+        }
+        .opti_mobile-menu-icon{
+            display: none;
+        }
+    }
+}
+
+// Default theme color
+// if we will add this css in top bar than background color will not change from theme file becuase it will take high prioraty that's why i add here
+section#opti_TopBarID{ 
+    background: linear-gradient(177deg, #483DF6 2%, #435EF8 10%, #1BA0F1 44%, #25DDF5 91%, #45D790 130%);
+}
+  
+.opti_left-navigation {
+    box-shadow: 0px 1px 15px #1fa2ff;
+}
+
+body kendo-grid {
+    box-shadow: 0px 1px 15px #1fa2ff;
+}
+
+// Always set stripe theme for account module
+body.opti_account-module{
+    .k-indicator-container, a, h1, h2, h3, h4, h5, h6, .k-grid-header .k-header {
+        color: $themeForAccountSection;
+    }
+    .k-checkbox:checked + .k-checkbox-label::before {
+        border-color: $themeForAccountSection;
+        background-color: $themeForAccountSection;
+    }
+    .ps__thumb-y, .ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y{
+        background-color: $themeForAccountSection;
+    }
+    .k-checkbox:focus + .k-checkbox-label::before{
+        box-shadow: 0 0 0 1px $white, 0 0 0 3px $themeForAccountSection;
+    }
+    .k-dropdown > :hover,
+    .k-dropdown .k-dropdown-wrap{
+        border-color: $themeForAccountSection;
+    }
+    .k-dropdown .k-state-focused, .k-dropdowntree .k-state-focused {
+        box-shadow: 0 0 0 3px rgba($color: $themeForAccountSection, $alpha: 0.2); 
+    }
+    .opti_loader .opti_spinner{
+        border-top-color: $themeForAccountSection !important;
+    }
+    .k-button.k-primary:focus, .k-button.k-primary.k-state-focused{
+        box-shadow: 0 0 0 3px rgba($color: $themeForAccountSection, $alpha: 0.2);  
+    }
+}
+

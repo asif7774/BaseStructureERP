@@ -1,0 +1,96 @@
+/////////////////////////////////////
+// SignUp, SignIn, SetPassword, Reset Password
+////////////////////////////////////
+.opti_account-module .opti_account-submodule-wrapper{
+    .opti_account-submodule-container{
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+        height: 100%;
+    }
+}
+
+body.opti_account-module{
+    padding: 20px !important;
+    .opti_account-banner-section{
+        display: none;
+    }
+    .opti_account-form-section{
+        height: calc(100vh - 40px);
+        border-radius: 5px;
+        width: 100% !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+    .opti_vertcal-align-outer-box{
+        height: 100%;
+    }
+    // .panel-body{
+    //     padding: 20px;
+    // }
+    .opti_account-logo{
+    //    margin-top: 20px;
+    //    width: 100%;
+    //    margin-bottom: 0;
+    }
+}
+
+body.opti_account-module{
+    background-image: none !important;
+    background:linear-gradient(177deg, #483DF6 2%, #435EF8 10%, #1BA0F1 44%, #25DDF5 91%, #45D790 130%) !important;
+    
+}
+
+/////////////////////////////////////
+// CSS Related To signup Page
+/////////////////////////////////////
+.opti_body-signup #opti_signupPageID{
+    .panel-body{
+        padding: 0;
+        .opti_signup-companyname, .opti_signup-url {
+            float: none;
+            width: 100%;
+        }
+        .opti_signup-primary-name, 
+        .opti_signup-primary-email, 
+        .opti_signup-primary-phone {
+            float: none;
+            width: 100%;
+        }
+        .opti_signup-primary-email {
+            margin: 0;
+        }
+        
+    }
+}
+
+/////////////////////////////
+// CSS Related To signin Page
+/////////////////////////////
+.opti_body-login #opti_signinID{
+
+    // .opti_vertcal-align-outer-box{
+    //     padding: 10px 0;
+    // }
+
+    // .opti_login-brandlogo{
+    //     position: relative;
+    //     width: 100%;
+    //     text-align: center;
+    // }
+}
+
+////////////////////////////////////
+// Css Related To landing page
+////////////////////////////////////
+
+#opti_landingpageID{
+    .opti_vertcal-align-outer-box{
+        text-align: center;
+        .panel-body{
+            .float-left, .float-right{
+                float: none !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,182 @@
+ 
+@import '../../../assets/css/_base';
+
+.opti_search-form{
+    background-color: #fff;
+    height: 30px;
+    border-radius: 5px;
+    input{
+        // width: 171px;
+        width:calc(100% - 40px);
+        float: left;
+        background-color: transparent;
+        &.form-control{
+            border: none;
+        }
+    }
+}
+
+#opti_TopBarID .opti_top-search-icon.opti_vertical-align {
+    height: 30px;
+    padding: 0 10px;
+}
+
+#sidebarCollapse.opti_vertical-align{
+    height: $top-bar-height;
+}
+
+
+
+// if left panel open
+#sidebarCollapse{
+    .opti_backarrow{
+        display: block;
+    }
+    .opti_mobile-menu-icon{
+        display: none;
+    }
+    .opti_hamburger{
+        display: none;
+    }
+}
+// end left panel open
+
+#opti_TopBarID{
+    .opti_vertical-align{
+        height: $top-bar-height;
+    }
+    
+    .opti_topbar-rightpanel{
+        ul{
+            li{
+                list-style: none;
+            }
+        }
+    }
+
+    .opti_user-profile{
+        img{
+            border-radius: 50%;
+        }
+        .dropdown-toggle::after{
+            display: none;
+        }
+    }
+
+    .opti_user-profile-drop-down {
+        right: 0 !important;
+        left: auto !important;
+        top: 46px !important;
+        width: 270px;
+        padding-bottom: 0;
+        img{
+            border: 0;
+        }
+    }
+
+    .opti_profile-box{
+        height: 100%;
+        .opti_profile-box-img {
+            float: left;
+        }
+        .opti_profile-box-text {
+            float: left;
+            margin-left: 15px;
+            width: 140px;
+            h5, p{
+                margin-bottom: 0;
+            }
+            max-height: 80px;
+            height: 100%;
+
+        }
+        .opti_profile-para .btn{
+            border-radius: 60px;
+            margin-top: 3px;
+            margin-bottom: 4px;
+        }
+        
+    }
+    .opti_profile-box-logout, 
+    .opti_profile-box-help, 
+    .opti_profile-box-setting,
+    .opti_profile-box-aboutus{
+        svg-icon{
+            // position: relative;
+            // top: 5px;
+            margin-right: 10px;
+        }
+    }
+
+    .opti_user-profile-drop-down li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+        // &.opti_mouse-pointer:hover{
+        //     background-color: $list-hover-bg-color;
+        // }
+        
+    }
+
+    .opti_user-profile-drop-down li.opti_seprator {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .opt_topbar-count{ // Notification
+        background: orange;
+        color: white;
+        font-size: 10px;
+        border-radius: 50%;
+        padding: 5px 3px;
+        position: relative;
+        top: -9px;
+        right: 3px;
+        width: 23px;
+        height: 23px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+
+
+// Right Panel
+#opti_ThemeSettingID{
+    position: fixed;
+    right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px; 
+    height: calc(100% - 65px);
+    z-index: 999;
+    width: 200px;
+    display: none;
+    border-left: 2px solid #c7c7c7;
+}
+#opti_ThemeSettingID.opt_show{
+    display: block;
+}
+
+// Mobile logo
+.opti_mobile-logo{
+    display: none;
+}
+
+// hide down arrow from mobile search
+.dropdown-toggle::after{
+    display: none;
+}
+
+// Css Related to Notification
+.opti_notification-drop-down{
+    left: auto !important;
+    right: 13px !important;
+    top: 44px !important;
+    width: 357px;
+    height: auto;
+    overflow-y: auto;
+    max-height: 400px;
+    
+}
+.dropdown-menu.opti_notification-drop-down.show {
+    padding: 0;
+}

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+// imports for all mixins + global project variables
+// @import '_typography';
+// @import '_button';
+// @import '_grid';
+
+// Some Basic Variable
+$white : #fff;
+$error : #D47474;
+$top-bar-height:65px;
+$list-hover-bg-color: #f2f4f8;
+$list-bg-color: #F8F8F8;
+$list-seprator-color:rgba(120, 130, 140, 0.13);
+$light-black:#333;
+$dark-black:#333;
+$input-border-color:rgba(33, 37, 41, 0.15);
+$themeForAccountSection:#1fa2ff;
+
+// Truncate
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// font size
+$font-family-lato: 'Lato', sans-serif;
+//$font-family-roboto: 'Roboto', sans-serif;
+@mixin font($size: false, $weight: false,  $lh: false) {
+    font-family: $font-family-lato; 
+    @if $size { font-size: $size; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+// pseudo
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// To quickly centre a block element
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+// border radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+
+ // margin
+@mixin margin($top: false, $right: false, $bottom: false,  $left: false) {
+    @if $bottom {margin-bottom: $bottom;}
+    @if $right   {margin-right: $right;}
+    @if $left     {margin-left: $left;}
+    @if $top       {margin-top: $top;}
+ }
+
+ // padding
+@mixin padding($top: false, $right: false, $bottom: false,  $left: false) {
+    @if $bottom {padding-bottom: $bottom;}
+    @if $right   {padding-right: $right;}
+    @if $left     {padding-left: $left;}
+    @if $top       {padding-top: $top;}
+ }
+
+ // Truncate
+@mixin password-mg-indicator($width: false, $color: false) {
+    @if $width {width: $width;}
+    @if $color {background-color: $color;}
+    height: 100%;
+    float: left;
+    -webkit-transition: 2s; /* For Safari 3.1 to 6.0 */
+    transition: 2s;
+}
+
+// Align Vertically
+.opti_table-v-middle{
+    display: table;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    .opti_table-cell-v-middle{
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+}
+  
+.opti_vertical-align{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// Line Seprator
+.opti_seprator{
+    height: 1px;
+    overflow: hidden;
+    background-color: $list-seprator-color;
+    padding: 0;
+}
+
+// Hide element In Desktop And Ipad
+.opti_hide-in-desktop-ipad{
+    display: none;
+}

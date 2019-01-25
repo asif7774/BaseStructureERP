@@ -1,0 +1,7 @@
+#opti_WrapperID .opti_right-fix-section {width: 66%;}
+#opti_WrapperID #opti_LeftPanelID, #opti_WrapperID #opti_RightPanelID {
+    height:calc(100vh - 25px);
+}
+body kendo-grid {
+    box-shadow: none !important;
+}

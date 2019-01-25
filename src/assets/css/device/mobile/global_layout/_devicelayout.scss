@@ -1,0 +1,212 @@
+#opti_WrapperID{
+    display: block;
+    align-items: stretch;
+
+    .opti_hide-in-mobile{
+        display: none;
+    }
+    .opti_hide-in-desktop-ipad{
+        display: block;
+    }
+
+    #opti_LeftPanelID{
+        min-width: 50%;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .opti_left-navigation {
+        // height: 100%;
+        overflow-y: auto;
+    }
+    
+    #opti_RightPanelID{ 
+        width: 100%;
+        height: auto;
+    }
+
+    // mian content area
+    #opti_MainContentID { // main content height(After deduct top bar height)
+        height: calc(100% - 65px);
+        overflow-y: scroll;
+    }
+ 
+    // top panel
+    #opti_TopBarID {
+        min-height: $top-bar-height;
+    }
+
+    // Application logo 
+    .opti_mobile-logo{
+        display: flex;  
+        float: left; 
+        max-width: 80px;
+        width: auto;
+        img{
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+    .opti_device-logo{
+        display: none;   
+    }
+
+    // side panel navigation
+    app-portal-left{
+        position: fixed;
+        display: none;
+    }
+
+    #sidebarCollapse .opti_mobile-menu-icon{
+        display: block;
+    }
+
+    .opti_menusidebar-mobile-open{
+        app-portal-left {
+            width: 100%;
+            height: calc(100% - 65px);
+            z-index: 999;
+            display: block;
+            .opti_menusidebar-mobile-open{
+                height: 100%;
+            }
+        }
+    }
+
+
+    // change Hamburger and cross icon
+    .opti_menusidebar-mobile-open{
+        app-portal-top{
+            #sidebarCollapse .opti_backarrow{
+                display: block;
+            }
+            #sidebarCollapse .opti_hamburger{
+                display: none;
+            }
+            #sidebarCollapse .opti_desktop-menu-icon{
+                display: none;
+            }
+        }
+    }
+
+    // to fix the header in mobile
+    app-portal-top{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+
+        
+        #sidebarCollapse .opti_backarrow{
+            display: none;
+        }
+        #sidebarCollapse .opti_hamburger{
+            display: block;
+        }
+        #sidebarCollapse .opti_desktop-menu-icon{
+            display: none;
+        }
+    }
+
+    #opti_MainContentID {
+        margin-top: 65px;
+    }
+
+
+    #opti_LeftPanelID.opti_menusidebar-mobile-open{
+        width: 80%;
+        height: 100%;
+        padding-top: 10px;
+    }
+
+    .opti_left-navigation{
+        margin: 0;
+    }
+
+    #opti_LeftPanelID{
+        padding: 0 10px;
+    }
+
+    // search box start
+    #opti_TopBarID{
+        .opti_search-form{
+            background-color: transparent;
+            .opti_top-search-icon{
+                padding: 0;
+            }
+        }
+    }
+    // search box end
+
+    //Opti right section 
+    .opti_right-fix-section{
+        width: 100%;
+    }
+}
+
+
+////////////////////////////////
+// Css Related To Search Modal
+////////////////////////////////
+.modal-body.opti_mobile-search-modal{
+    .opti_search-form{
+        background-color: #fff;
+        height: 30px;
+        border-radius: 0;
+        border-bottom: 1px solid #c7c7c7;
+        input{
+            // width: 288px;
+            // min-width: 275px;
+            width:calc(100% - 40px);
+            min-width:calc(100% - 40px);
+        }
+        .opti_top-search-icon{
+            height: 30px;
+            padding: 0 10px;
+        }
+    }
+}
+
+////////////////////////////////
+// Css Related To Notification
+////////////////////////////////
+.opti_notification-drop-down{
+    width: 270px !important;
+}
+@media screen and (orientation:landscape) {
+    .opti_notification-drop-down{
+        max-height: 200px !important;
+    }   
+}
+
+
+
+////////////////////////////
+// hide tooltip
+////////////////////////////
+bs-tooltip-container{
+    display: none !important;
+}
+
+
+////////////////////////////
+// Grid ection
+////////////////////////////
+.opti_right-top-sec-grid, .opti_right-top-sec-grid{
+    float: left !important;
+    .opti_add-request{
+        margin-left: 0 !important;
+    }
+}
+
+
+
+.opti_mobile-search-modal{
+    input:focus{
+        box-shadow: none;
+    }
+}
